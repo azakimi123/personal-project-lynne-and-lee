@@ -38,7 +38,7 @@ massive({
 
 
 //product controllers
-
+app.get('/api/products', productCTRL.allProducts);
 
 //order controllers
 
