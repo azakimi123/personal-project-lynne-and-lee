@@ -1,39 +1,21 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import Header1 from './Header1';
+import Header2 from './Header2';
 import '../../App.scss'
 
-function Nav() {
+function Nav(props) {
+    // console.log(props)
     return (
         <div>
-            <header>
-                <section>
-                    
-                </section>
-                <section className='nav-header'>
-                    <ul>
-                        <Link to='/'>
-                            <li>HOME</li>
-                        </Link>
-                        <Link to='/shop'>
-                            <li>SHOP</li>
-                        </Link>
-                        <Link to='/about'>
-                            <li>ABOUT</li>
-                        </Link>
-                        <Link to='/contact'>
-                            <li>CONTACT</li>
-                        </Link>
-                        <Link to='/signin'>
-                            <li>SIGN IN</li>
-                        </Link>
-                        <Link to='/cart'>
-                            <li>CART</li>
-                        </Link>
-                    </ul>
-                </section>
-            </header>
+            {props.loggedIn === false ?
+            <Header1 /> :
+            <Header2 />}
         </div>
     )
 }
 
-export default Nav;
+const mapStateToProps = reduxState => reduxState;
+
+export default connect(mapStateToProps)(Nav);

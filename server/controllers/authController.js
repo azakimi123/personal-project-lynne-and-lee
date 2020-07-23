@@ -31,6 +31,7 @@ module.exports = {
         //check if user exists
         const foundUser = await db.users.check_user({email});
         const user = foundUser[0];
+        req.session.user = user;
         // console.log(user.user_password)
         if(!user) {
             return res.status(400).send('email is not associated with an account, please register')

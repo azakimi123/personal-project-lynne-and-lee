@@ -13,7 +13,7 @@ function Register(props) {
         if(email && username && password) {
             axios.post('/auth/register', {email, username, password})
             .then(res => {
-                console.log(res.data)
+                // console.log(res)
                 props.getUser(res.data);
                 props.history.push('/');
             })

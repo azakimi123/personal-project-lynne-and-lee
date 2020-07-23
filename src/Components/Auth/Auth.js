@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {connect} from 'react-redux';
-import {getUser} from '../../redux/userReducer';
+import {getUser, toggle} from '../../redux/userReducer';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import '../../App.scss'
@@ -13,17 +13,16 @@ function Auth(props) {
     const handleLogin = () => {
         axios.post('/auth/login', {email, password})
         .then(res => {
-            props.getUser(res.data)
-            props.history.push('/')
+            console.log(res)
+            props.getUser(res.data);
+            props.toggle(true);
+            props.history.push('/');
         })
         .catch(err => alert(err.response.request.response))
     }
-    // console.log(password)
+    console.log(props)
     return(
         <div>
-            {/* <span>USERNAME</span><input
-                value={username}
-                onChange={ e => setUsername(e.target.value)}/> */}
             <span>EMAIL</span><input
                 value={email}
                 onChange={ e => setEmail(e.target.value)}/>
@@ -41,4 +40,4 @@ function Auth(props) {
 
 const mapStateToProps = reduxState => reduxState;
 
-export default connect(mapStateToProps, {getUser})(Auth);
+export default connect(mapStateToProps, {getUser, toggle})(Auth);
