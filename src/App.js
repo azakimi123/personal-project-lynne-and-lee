@@ -14,7 +14,7 @@ import Nav from './Components/Nav/Nav';
 // import ShopManager from './Components/ShopManager/ShopManager';
 // import ShopStats from './Components/ShopStats/ShopStats';
 import routes from './routes';
-import './App.css';
+import './App.scss';
 
 class App extends Component {
   render(){

@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import '../../App.scss'
 
 function Nav() {
     return (
@@ -8,7 +9,7 @@ function Nav() {
                 <section>
                     
                 </section>
-                <section>
+                <section className='nav-header'>
                     <ul>
                         <Link to='/'>
                             <li>HOME</li>
