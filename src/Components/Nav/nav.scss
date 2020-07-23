@@ -1,11 +1,14 @@
 
 header{
     display: flex;
-    justify-content: flex-end;
+    // flex-direction: row-reverse;
+    // background: blue;
 }
 .nav-header {
+    width:100vw;
     display: flex;
     align-items: center;
+    flex-direction: row-reverse;
     justify-content:space-between;
       
     ul {
