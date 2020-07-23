@@ -7,7 +7,9 @@ $text-color: black;
 
 
 //Mixins
-@mixin link() {
-
+@mixin link-style($color) {
+    list-style-type: none;
+    text-decoration: none;
+    color:$color;
 }
 

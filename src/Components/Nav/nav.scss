@@ -1,3 +1,8 @@
+
+header{
+    display: flex;
+    justify-content: flex-end;
+}
 .nav-header {
     display: flex;
     align-items: center;
@@ -6,6 +11,7 @@
     ul {
     display:flex;
     list-style-type: none;
+    margin-right: 50px;
     
     }
     
@@ -14,9 +20,7 @@
 
     }
     a{
-        list-style-type: none;
-        text-decoration: none;
-        color:$text-color;
+        @include link-style($text-color);
     }
     
     a:hover{

@@ -19,7 +19,7 @@ import './App.scss';
 class App extends Component {
   render(){
     return(
-      <div>
+      <div className='app-container'>
         <Nav/>
         {routes}
       </div>

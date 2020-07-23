@@ -1,14 +1,16 @@
+header {
+  display: flex;
+  justify-content: flex-end; }
+
 .nav-header {
   display: flex;
   align-items: center;
   justify-content: space-between; }
   .nav-header ul {
     display: flex;
-    list-style-type: none; }
+    list-style-type: none;
+    margin-right: 50px; }
   .nav-header li {
     padding: 15px; }
-  .nav-header a {
-    list-style-type: none;
-    text-decoration: none; }
   .nav-header a:hover {
     color: lightgrey; }
