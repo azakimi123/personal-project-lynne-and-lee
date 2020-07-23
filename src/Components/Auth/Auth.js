@@ -1,13 +1,44 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
+import {connect} from 'react-redux';
+import {getUser} from '../../redux/userReducer';
+import axios from 'axios';
+import {Link} from 'react-router-dom';
+import '../../App.scss'
 
-class Auth extends Component {
-    render(){
-        return (
-            <div>
-                <p>Auth</p>
-            </div>
-        )
+function Auth(props) {
+    let [email, setEmail] = useState('');
+    // let [username, setUsername] = useState('');
+    let [password, setPassword] = useState('');
+
+    const handleLogin = () => {
+        axios.post('/auth/login', {email, password})
+        .then(res => {
+            props.getUser(res.data)
+            props.history.push('/')
+        })
+        .catch(err => alert(err.response.request.response))
     }
+    // console.log(password)
+    return(
+        <div>
+            {/* <span>USERNAME</span><input
+                value={username}
+                onChange={ e => setUsername(e.target.value)}/> */}
+            <span>EMAIL</span><input
+                value={email}
+                onChange={ e => setEmail(e.target.value)}/>
+            <span>PASSWORD</span><input
+                value={password}
+                type='password'
+                onChange={ e => setPassword(e.target.value)}/>
+            <button onClick={handleLogin}>SIGN IN</button>
+            <Link to='/register'>
+                <p>CREATE ACCOUNT</p>
+            </Link>
+        </div>
+    )
 }
 
-export default Auth;
+const mapStateToProps = reduxState => reduxState;
+
+export default connect(mapStateToProps, {getUser})(Auth);

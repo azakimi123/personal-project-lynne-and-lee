@@ -6,7 +6,7 @@ import React, {Component} from 'react';
 // import Checkout from './Components/Checkout/Checkout';
 // import CheckoutDisplay from './Components/CheckoutDisplay/CheckoutDisplay';
 // import Contact from './Components/Contact/Contact';
-import Landing from './Components/Landing/Landing';
+// import Landing from './Components/Landing/Landing';
 import Nav from './Components/Nav/Nav';
 // import Product from './Components/Product/Product';
 // import ProductEdit from './Components/ProductEdit/ProductEdit';

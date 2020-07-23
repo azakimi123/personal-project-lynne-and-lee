@@ -5,6 +5,7 @@ import Shop from './Components/Shop/Shop';
 import Product from './Components/Product/Product';
 import About from './Components/About/About';
 import Auth from './Components/Auth/Auth';
+import Register from './Components/Auth/Register';
 import Contact from './Components/Contact/Contact';
 import ShopManager from './Components/ShopManager/ShopManager';
 import ShopStats from './Components/ShopStats/ShopStats';
@@ -19,6 +20,7 @@ export default (
         <Route path='/contact' component={Contact} />
         <Route path='/cart' component={Checkout} />
         <Route path='/signin' component={Auth} />
+        <Route path='/register' component={Register} />
         <Route path='/product/:productId' component={Product} />
         <Route path='/shop/manager' component={ShopManager} />
         <Route path='/stats' component={ShopStats} />

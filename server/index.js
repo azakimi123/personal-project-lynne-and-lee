@@ -35,6 +35,9 @@ massive({
 
 
 //auth controllers
+app.post('/auth/register', authCTRL.register);
+app.post('/auth/login', authCTRL.login);
+app.post('/auth/logout', authCTRL.logout);
 
 
 //product controllers
