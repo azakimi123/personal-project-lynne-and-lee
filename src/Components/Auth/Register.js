@@ -16,9 +16,18 @@ function Register(props) {
                 // console.log(res)
                 props.getUser(res.data);
                 props.history.push('/');
+                mailFn();
             })
-            .catch(err => alert('Sign in information not registered'))
+            .catch(err => alert('An account with this email already exists'))
         }
+    }
+    
+    const mailFn = () => {
+        axios.post('/api/mail')
+        .then( () => {
+            console.log('email sent')
+        })
+        .catch(err => console.log(err))
     }
 
     // console.log(props)

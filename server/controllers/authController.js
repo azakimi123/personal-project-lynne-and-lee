@@ -19,6 +19,7 @@ module.exports = {
         //register new user
         const newUser = await db.users.register_user({username, email, hash});
         req.session.user = newUser[0];
+        console.log(req.session.user)
         res.status(201).send(req.session.user);
         console.log('new account registered!')
 

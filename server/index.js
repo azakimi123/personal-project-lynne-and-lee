@@ -6,6 +6,7 @@ const express = require('express'),
       massive = require('massive'),
       authCTRL = require('./controllers/authController'),
       productCTRL = require('./controllers/productController'),
+      mailCTRL = require('../server/nodemailer/mailController'),
       orderCTRL = require('./controllers/orderController'),
       reviewCTRL = require('./controllers/reviewController');
 
@@ -39,6 +40,8 @@ app.post('/auth/register', authCTRL.register);
 app.post('/auth/login', authCTRL.login);
 app.post('/auth/logout', authCTRL.logout);
 
+//mail controllers
+app.post('/api/mail', mailCTRL.email);
 
 //product controllers
 app.get('/api/products', productCTRL.allProducts);
