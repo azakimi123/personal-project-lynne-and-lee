@@ -1,19 +1,26 @@
 import React, {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
+import {addToCart} from '../../redux/cartReducer';
 import axios from 'axios';
 import '../../App.scss'
 
 function Product(props){
     let [product, setProduct] = useState([{}]);
-    let [images, setImages] = useState([]);
+    // let [images, setImages] = useState([]);
     useEffect(() => {
         axios.get(`/api/product/${props.match.params.productId}`).then(res => (
-            setProduct(res.data),
-            console.log(res.data),
-            setImages([res.data[0].product_image1, res.data[0].product_image2, res.data[0].product_image3])
+            setProduct(res.data)
+            // console.log(res.data)
+            // setImages([res.data[0].product_image1, res.data[0].product_image2, res.data[0].product_image3])
             ))
     }, [])
-    console.log(product)
+
+    // const handleCart = () => {
+    //     props.addToCart(product[0])
+    // }
+
+    // console.log(product)
+    // console.log(props)
         return (
             <div>
                 <main>
@@ -28,11 +35,11 @@ function Product(props){
                             <img className='image-container-pic'  src={product[0].product_image3} alt={product[0].product_name}/>
                         </div>
                     </section>
-                    <setion>
+                    <section>
                         <div className='main-pic-container'>
                             <img className='main-image-container-pic'  src={product[0].product_image1} alt={product[0].product_name}/>
                         </div>
-                    </setion>
+                    </section>
                     <section className='product-info'>
                         <p className='product-title'>{product[0].product_name}</p>
                         <p className='product-price'>${product[0].price}</p>
@@ -44,4 +51,6 @@ function Product(props){
         )
     }
 
-export default connect()(Product);
+const mapStateToProps = reduxState => reduxState;
+
+export default connect(mapStateToProps, {addToCart})(Product);

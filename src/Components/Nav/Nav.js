@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import Header1 from './Header1';
@@ -9,13 +9,13 @@ import '../../App.scss'
 function Nav(props) {
     // console.log(props)
 const handleNavDisplay = () => {
-    if(props.loggedIn === false) {
+    if(props.userReducer.loggedIn === false) {
         // console.log('first if')
         return <Header1 />
-    } else if(props.loggedIn === true && props.isAdmin === true){
+    } else if(props.userReducer.loggedIn === true && props.userReducer.isAdmin === true){
         // console.log('second if')
         return <AdminHeader />
-    } else if(props.loggedIn === true && props.isAdmin === false) {
+    } else if(props.userReducer.loggedIn === true && props.userReducer.isAdmin === false) {
         // console.log('third if')
         return <Header2 />
     }

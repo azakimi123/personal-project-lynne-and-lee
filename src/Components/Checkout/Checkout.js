@@ -1,13 +1,13 @@
-import React, {Component} from 'react';
+import React, {useEffect} from 'react';
+import {connect} from 'react-redux';
 
-class Checkout extends Component {
-    render(){
+function Checkout(props){
+    // console.log(props)
         return (
             <div>
                 <p>Checkout</p>
             </div>
         )
     }
-}
 
-export default Checkout;
+export default connect()(Checkout);
