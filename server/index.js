@@ -42,6 +42,7 @@ app.post('/auth/logout', authCTRL.logout);
 
 //product controllers
 app.get('/api/products', productCTRL.allProducts);
+app.get('/api/product/:id', productCTRL.getOneProduct);
 
 //order controllers
 

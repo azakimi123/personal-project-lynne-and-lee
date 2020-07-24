@@ -13,3 +13,15 @@ $text-color: black;
     color:$color;
 }
 
+@mixin image-container($w, $h) {
+    width: $w;
+    height: $h;
+    box-shadow: $border-shadow;
+    margin: 20px;
+}
+
+@mixin images() {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
