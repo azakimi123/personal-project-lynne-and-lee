@@ -41,6 +41,7 @@ module.exports = {
         else {
             const isAuthenticated = bcrypt.compareSync(password, user.user_password);
             if (!isAuthenticated || user === undefined) {
+                console.log(user)
                 res.status(403).send('Incorrect Email/Password');
             } else {
                 delete user.password;

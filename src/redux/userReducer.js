@@ -1,10 +1,12 @@
 const initialState = {
     user:{},
-    loggedIn: false
+    loggedIn: false,
+    isAdmin: false
 }
 
 const GET_USER = 'GET_USER';
 const LOGGED_IN = 'LOGGED_IN';
+const IS_ADMIN = 'IS_ADMIN';
 const CLEAR_USER = 'CLEAR_USER';
 
 
@@ -18,6 +20,13 @@ export function getUser(userObj) {
 export function toggle(input) {
     return {
         type:LOGGED_IN,
+        payload: input
+    }
+}
+
+export function toggleAdmin(input) {
+    return {
+        type: IS_ADMIN,
         payload: input
     }
 }
@@ -39,6 +48,8 @@ export default function reducer(state = initialState, action) {
             return {...state, user: payload};
         case LOGGED_IN:
             return {...state, loggedIn: payload};
+        case IS_ADMIN:
+            return {...state, isAdmin: payload};
         case CLEAR_USER:
             return {...state, user: payload};
         default:

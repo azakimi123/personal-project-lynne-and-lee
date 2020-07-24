@@ -9,6 +9,6 @@ INSERT INTO users (
     ${email},
     ${hash},
     'https://image.flaticon.com/icons/svg/2948/2948035.svg',
-    FALSE
+    TRUE
 )
 returning user_id, username, user_email, user_profile_pic;

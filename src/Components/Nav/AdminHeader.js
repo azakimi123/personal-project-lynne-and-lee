@@ -1,15 +1,30 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
+import {clearUser, toggle, toggleAdmin} from '../../redux/userReducer';
+import axios from 'axios';
 import '../../App.scss'
 
-function Header1(props) {
-    // console.log(props)
+function AdminHeader(props) {
+
+    const handleLogOut = () => {
+        axios.post('/auth/logout')
+        .then(() => {
+            props.toggle(false);
+            props.toggleAdmin(false);
+            props.clearUser();
+            props.history.push('/');
+        })
+        .catch(err => console.log(err))
+    }
+
+    console.log(props)
     return (
         <div>
             <header>
                 <section>
-                    
+                    <p>YOU ARE LOGGED IN!!!</p>
+                    <p>{props.user.username}</p>
                 </section>
                 <section className='nav-header'>
                     <ul>
@@ -25,8 +40,11 @@ function Header1(props) {
                         <Link to='/contact'>
                             <li>CONTACT</li>
                         </Link>
-                        <Link to='/signin'>
-                            <li>SIGN IN</li>
+                        <Link to='/'>
+                            <li onClick={handleLogOut}>LOG OUT</li>
+                        </Link>
+                        <Link to='/manager'>
+                            <li>SHOP MANAGER</li>
                         </Link>
                         <Link to='/cart'>
                             <li>CART</li>
@@ -38,4 +56,6 @@ function Header1(props) {
     )
 }
 
-export default connect()(Header1);
+const mapStateToProps = reduxState => reduxState;
+
+export default connect(mapStateToProps, {toggle, clearUser, toggleAdmin})(AdminHeader);

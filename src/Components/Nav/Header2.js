@@ -17,7 +17,7 @@ function Header2(props) {
         .catch(err => console.log(err))
     }
 
-    console.log(props)
+    // console.log(props)
     return (
         <div>
             <header>

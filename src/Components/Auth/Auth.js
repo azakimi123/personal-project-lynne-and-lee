@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {connect} from 'react-redux';
-import {getUser, toggle} from '../../redux/userReducer';
+import {getUser, toggle, toggleAdmin} from '../../redux/userReducer';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import '../../App.scss'
@@ -13,14 +13,22 @@ function Auth(props) {
     const handleLogin = () => {
         axios.post('/auth/login', {email, password})
         .then(res => {
-            console.log(res)
+            console.log(res.data)
             props.getUser(res.data);
-            props.toggle(true);
-            props.history.push('/');
+            if(res.data.is_admin === true) {
+                console.log('admin worked')
+                props.toggleAdmin(true);
+                props.toggle(true);
+                props.history.push('/');
+            } else {
+                console.log('regular user')
+                props.toggle(true);
+                props.history.push('/');
+            }        
         })
         .catch(err => alert(err.response.request.response))
     }
-    console.log(props)
+    // console.log(props)
     return(
         <div>
             <span>EMAIL</span><input
@@ -40,4 +48,13 @@ function Auth(props) {
 
 const mapStateToProps = reduxState => reduxState;
 
-export default connect(mapStateToProps, {getUser, toggle})(Auth);
+export default connect(mapStateToProps, {getUser, toggle, toggleAdmin})(Auth);
+
+
+
+
+
+
+// props.getUser(res.data);
+// props.toggle(true);
+// props.history.push('/');

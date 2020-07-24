@@ -22,7 +22,7 @@ export default (
         <Route path='/signin' component={Auth} />
         <Route path='/register' component={Register} />
         <Route path='/product/:productId' component={Product} />
-        <Route path='/shop/manager' component={ShopManager} />
+        <Route path='/manager' component={ShopManager} />
         <Route path='/stats' component={ShopStats} />
         <Route path='/edit/:productId' component={ProductEdit} />
     </Switch>
