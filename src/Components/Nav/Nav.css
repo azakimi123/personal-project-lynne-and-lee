@@ -1,10 +1,11 @@
 header {
-  display: flex;
-  justify-content: flex-end; }
+  display: flex; }
 
 .nav-header {
+  width: 100vw;
   display: flex;
   align-items: center;
+  flex-direction: row-reverse;
   justify-content: space-between; }
   .nav-header ul {
     display: flex;
@@ -12,5 +13,9 @@ header {
     margin-right: 50px; }
   .nav-header li {
     padding: 15px; }
+  .nav-header a {
+    list-style-type: none;
+    text-decoration: none;
+    color: black; }
   .nav-header a:hover {
     color: lightgrey; }

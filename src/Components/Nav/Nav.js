@@ -10,13 +10,13 @@ function Nav(props) {
     // console.log(props)
 const handleNavDisplay = () => {
     if(props.loggedIn === false) {
-        console.log('first if')
+        // console.log('first if')
         return <Header1 />
     } else if(props.loggedIn === true && props.isAdmin === true){
-        console.log('second if')
+        // console.log('second if')
         return <AdminHeader />
     } else if(props.loggedIn === true && props.isAdmin === false) {
-        console.log('third if')
+        // console.log('third if')
         return <Header2 />
     }
 }
