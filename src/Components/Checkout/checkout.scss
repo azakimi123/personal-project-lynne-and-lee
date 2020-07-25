@@ -1,0 +1,39 @@
+@import '../../styles/config.scss';
+
+.cart-card{
+    width: 600px;
+    height: 200px;
+    // background: blue;
+    box-shadow: $border-shadow;
+    border-radius: 5px;
+    margin-left: 50px;
+
+}
+
+.second-cart-card{
+    width: 600px;
+    height: 100px;
+    // background: purple;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 35px;
+}
+
+.card-pic-container{
+    @include image-container(200px, 150px);
+}
+
+.card-product-pic{
+    @include images();
+}
+
+
+.card-buttons{
+    width: 100px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+

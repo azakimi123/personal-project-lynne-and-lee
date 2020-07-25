@@ -15,12 +15,19 @@ function Product(props){
             ))
     }, [])
 
-    // const handleCart = () => {
-    //     props.addToCart(product[0])
-    // }
+    const handleCart = () => {
+        props.cartReducer.cart.push(product[0])
+        props.cartReducer.cartTotal.push(product[0].price)
+        alert(`item ${product[0].product_name} added to cart`)
+    }
+
+    // const insertItem = (array) => {
+    //     let newArr = array.push(product[0]);
+    //     return newArr;
+    //   }
 
     // console.log(product)
-    // console.log(props)
+    console.log(props)
         return (
             <div>
                 <main>
@@ -44,7 +51,7 @@ function Product(props){
                         <p className='product-title'>{product[0].product_name}</p>
                         <p className='product-price'>${product[0].price}</p>
                         <p className='product-description'>{product[0].product_description}</p>
-                        <button className='add-to-cart'>ADD TO CART</button>
+                        <button className='add-to-cart' onClick={handleCart}>ADD TO CART</button>
                     </section>
                 </main>
             </div>

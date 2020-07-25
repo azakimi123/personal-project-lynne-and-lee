@@ -20,7 +20,7 @@ const handleNavDisplay = () => {
         return <Header2 />
     }
 }
-console.log(props)
+// console.log(props)
     return (
         <div>
             {handleNavDisplay()}

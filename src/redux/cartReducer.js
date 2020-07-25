@@ -1,5 +1,6 @@
 const initialState = {
-    cart: []
+    cart: [],
+    cartTotal:[0]
 }
 
 const ADD_CART = 'ADD_CART';

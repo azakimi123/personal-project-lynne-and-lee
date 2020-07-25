@@ -123,5 +123,38 @@ main {
     background: grey;
     cursor: pointer; }
 
+.cart-card {
+  width: 600px;
+  height: 200px;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+  margin-left: 50px; }
+
+.second-cart-card {
+  width: 600px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 35px; }
+
+.card-pic-container {
+  width: 200px;
+  height: 150px;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
+  margin: 20px; }
+
+.card-product-pic {
+  height: 100%;
+  width: 100%;
+  object-fit: cover; }
+
+.card-buttons {
+  width: 100px;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-content: center; }
+
 .app-container {
   text-align: center; }
