@@ -13,7 +13,7 @@ function Auth(props) {
     const handleLogin = () => {
         axios.post('/auth/login', {email, password})
         .then(res => {
-            console.log(res.data)
+            // console.log(res.data)
             props.getUser(res.data);
             if(res.data.is_admin === true) {
                 console.log('admin worked')

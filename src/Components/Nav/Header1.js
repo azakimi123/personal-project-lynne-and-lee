@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import '../../App.scss'
 
 function Header1(props) {
-    console.log(props)
+    // console.log(props)
     return (
         <div>
             <header>

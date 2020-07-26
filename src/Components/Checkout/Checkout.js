@@ -15,7 +15,7 @@ function Checkout(props){
         setUserCart(props.cartReducer.cart)
         setCartTotal(props.cartReducer.cartTotal)
     }, [])
-    console.log(cartTotal)
+    // console.log(cartTotal)
         return (
             <div>
                 <p>Checkout</p>

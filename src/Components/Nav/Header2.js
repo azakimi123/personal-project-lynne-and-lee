@@ -23,7 +23,7 @@ function Header2(props) {
             <header>
                 <section>
                     <p>YOU ARE LOGGED IN!!!</p>
-                    <p>{props.user.username}</p>
+                    <p>{props.userReducer.user.username}</p>
                 </section>
                 <section className='nav-header'>
                     <ul>

@@ -27,7 +27,7 @@ function Product(props){
     //   }
 
     // console.log(product)
-    console.log(props)
+    // console.log(props)
         return (
             <div>
                 <main>
