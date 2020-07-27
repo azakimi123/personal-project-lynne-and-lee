@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
+import CardPayment from './CardPayment';
 import '../../App.scss';
 
 function Checkout(props){
@@ -11,11 +12,22 @@ function Checkout(props){
         return arr.reduce(reducer);
     }
 
+    const clearCart = () => {
+        props.cartReducer.cart.splice(0);
+        props.cartReducer.cartTotal = [0];
+        setUserCart([]);
+        setCartTotal([0]);
+    }
+
+    const handleRemove = (val) => {
+        props.cartReducer.cart.splice(val);
+    }   
+
     useEffect(() => {
         setUserCart(props.cartReducer.cart)
         setCartTotal(props.cartReducer.cartTotal)
     }, [])
-    // console.log(cartTotal)
+    console.log(props.cartReducer.cart)
         return (
             <div>
                 <p>Checkout</p>
@@ -33,11 +45,12 @@ function Checkout(props){
                                 <p>{product.price}</p>
                                 <button>+</button>
                             </section>
-                                <button>REMOVE</button>
+                                <button onClick={e => handleRemove(product)}>REMOVE</button>
                         </section>
                     </div>
                     ))}
                     <span>Total: ${handleTotal(cartTotal)}</span>
+                    <CardPayment total={handleTotal(cartTotal)} clearCartFn={clearCart}/>
             </div>
         )
     }

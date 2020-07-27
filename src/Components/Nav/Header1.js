@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
+import DropdownMenu from '../Dropdown/DropdownMenu';
 import '../../App.scss'
 
 function Header1(props) {
@@ -13,6 +14,7 @@ function Header1(props) {
                 </section>
                 <section className='nav-header'>
                     <ul>
+                        <li><DropdownMenu/></li>
                         <Link to='/'>
                             <li>HOME</li>
                         </Link>

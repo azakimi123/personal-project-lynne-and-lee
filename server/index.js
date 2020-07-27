@@ -7,6 +7,7 @@ const express = require('express'),
       authCTRL = require('./controllers/authController'),
       productCTRL = require('./controllers/productController'),
       mailCTRL = require('../server/nodemailer/mailController'),
+      stripeCTRL = require('../server/controllers/stripe/stripeController'),
       orderCTRL = require('./controllers/orderController'),
       reviewCTRL = require('./controllers/reviewController');
 
@@ -42,6 +43,9 @@ app.post('/auth/logout', authCTRL.logout);
 
 //mail controllers
 app.post('/api/mail', mailCTRL.email);
+
+//payment controllers
+app.post('/api/payment', stripeCTRL.payment);
 
 //product controllers
 app.get('/api/products', productCTRL.allProducts);
