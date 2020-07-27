@@ -19,9 +19,9 @@ function Checkout(props){
         setCartTotal([0]);
     }
 
-    const handleRemove = (val) => {
-        props.cartReducer.cart.splice(val);
-    }   
+    // const handleRemove = (val) => {
+    //     props.cartReducer.cart.splice(val);
+    // }   
 
     useEffect(() => {
         setUserCart(props.cartReducer.cart)
@@ -45,7 +45,7 @@ function Checkout(props){
                                 <p>{product.price}</p>
                                 <button>+</button>
                             </section>
-                                <button onClick={e => handleRemove(product)}>REMOVE</button>
+                                <button>REMOVE</button>
                         </section>
                     </div>
                     ))}
