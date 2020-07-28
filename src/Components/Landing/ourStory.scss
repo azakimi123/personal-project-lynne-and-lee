@@ -1,0 +1,18 @@
+.our-story-container{
+    @include centerMiddleFlex();
+}
+.story-container{
+    width: 1000px;
+    font-family: $font-stack;
+    line-height: 30px;
+    text-align: center;
+
+    p{
+        font-size: 18px;
+    }
+
+    h2{
+        font-size: 35px;
+        font-weight: 300;
+    }
+}

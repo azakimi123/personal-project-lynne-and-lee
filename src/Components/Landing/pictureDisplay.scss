@@ -1,0 +1,15 @@
+.picture-display-cover-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.picture-display-container{
+    width: 450px;
+    height: 400px;
+    margin: 10px;
+
+    img{
+        @include images();
+    }
+}

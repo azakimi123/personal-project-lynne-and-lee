@@ -50,6 +50,7 @@ app.post('/api/payment', stripeCTRL.payment);
 //product controllers
 app.get('/api/products', productCTRL.allProducts);
 app.get('/api/product/:id', productCTRL.getOneProduct);
+app.post('/api/addItem/:id', productCTRL.addItem);
 
 //order controllers
 

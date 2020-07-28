@@ -1,5 +1,6 @@
 import React, {useState, useEffect, isValidElement} from 'react';
 import {connect} from 'react-redux';
+import axios from 'axios';
 import CardPayment from './CardPayment';
 import {addToCart} from '../../redux/cartReducer';
 import '../../App.scss';
@@ -7,16 +8,17 @@ import '../../App.scss';
 function Checkout(props){
     let [userCart, setUserCart] = useState([]);
     let [cartTotal, setCartTotal] = useState([0]);
-    let [amount, setAmount] = useState(1);
 
 
-    const handleAdd = (price) => {
-        setAmount(amount += 1)
-        cartTotal.push(price)
+    const handleAdd = (id, amount, price) => {
+        axios.post(`/api/addItem/${id}`, {amount : amount++})
+        .then((res) => {
+            console.log(res.config.data.amount) 
+        })
     }
 
-    const handleSubtract = (price) => {
-        setAmount(amount -= 1)
+    const handleSubtract = (amount, price) => {
+        amount -= 1
         cartTotal.push(-price)
     }
 
@@ -55,7 +57,7 @@ function Checkout(props){
         setCartTotal(props.cartReducer.cartTotal)
     }, [])
 
-    console.log(cartTotal)
+    console.log(props)
         return (
             <div>
                 <p>Checkout</p>
@@ -69,9 +71,9 @@ function Checkout(props){
                                 <img className='card-product-pic' src={product.product_image1} alt={product.product_name} />
                             </div>
                             <section className='card-buttons'>
-                                <button onClick={ () => handleSubtract(product.price)}>-</button>
-                                <p>{amount}</p>
-                                <button onClick={() => handleAdd(product.price)}>+</button>
+                                <button onClick={ () => handleSubtract(product.product_amount, product.price)}>-</button>
+                                <p>{product.product_amount}</p>
+                                <button onClick={() => handleAdd(product.product_id, product.product_amount, product.price)}>+</button>
                             </section>
                                 <button onClick={() => productFinder2(product.product_id, product.price)}>REMOVE</button>
                                 {/* {console.log(userCart.findIndex(productIdFinder))} */}

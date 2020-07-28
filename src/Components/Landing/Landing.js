@@ -1,11 +1,15 @@
 import React from 'react';
-// import Nav from '../Nav/Nav';
+import Top from './Top';
+import OurStory from './OurStory'
+import PictureDisplay from './PictureDisplay'
 // import routes from '../../routes';
 
 function Landing() {
     return (
         <div>
-            <p>Landing Page</p>
+            <Top />
+            <OurStory />
+            <PictureDisplay />
         </div>
     )
 }

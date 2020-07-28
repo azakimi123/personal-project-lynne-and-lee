@@ -1,0 +1,37 @@
+.banner-cover-container{
+    @include image-container(100%, 500px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+    margin-top: 50px;
+    background-image: url('https://scontent.faus1-1.fna.fbcdn.net/v/t1.0-9/53243746_429993221082151_1424503552432144384_o.jpg?_nc_cat=111&_nc_sid=9267fe&_nc_ohc=gdxB4Z8h7UYAX-U3wLA&_nc_ht=scontent.faus1-1.fna&oh=86168c3390cec577394b16f1e9c8403b&oe=5F46F28B');
+    background-size: cover;
+    background-position: 0px -1000px;
+    background-repeat: no-repeat;
+}
+
+.button-container{
+    width: 200px;
+    height: 65px;
+    // margin-right: 40px;
+    // margin-bottom: 100px;
+    @include centerMiddleFlex();
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.19); 
+    @include link-style($text-color);
+    list-style-type: none;
+    opacity: .75;
+
+    &:hover{
+        opacity: 1;
+    }
+}
+
+.landing-shop-btn{
+    @include link-style($text-color);
+    text-decoration: none;
+}
+
+.btn-text{
+    font-family: $font-stack;
+}

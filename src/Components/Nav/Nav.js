@@ -23,10 +23,13 @@ const handleNavDisplay = () => {
 // console.log(props)
     return (
         <div>
-            {handleNavDisplay()}
-            {/* {props.loggedIn === false ?
-            <Header1 /> :
-            <Header2 />} */}
+            <section className='nav-container'>
+                <img className='title-image' src='https://fontmeme.com/temporary/394e08b25409d0ede6a9d7d77c49648e.png' alt='lynne and lee'/>
+                {handleNavDisplay()}
+                {/* {props.loggedIn === false ?
+                <Header1 /> :
+                <Header2 />} */}
+            </section>
         </div>
     )
 }

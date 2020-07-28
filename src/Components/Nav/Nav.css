@@ -1,12 +1,15 @@
 header {
   display: flex; }
 
+.title-image {
+  margin-top: 50px; }
+
 .nav-header {
   width: 100vw;
   display: flex;
   align-items: center;
   flex-direction: row-reverse;
-  justify-content: space-between; }
+  justify-content: center; }
   .nav-header ul {
     display: flex;
     list-style-type: none;

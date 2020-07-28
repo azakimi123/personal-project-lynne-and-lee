@@ -1,16 +1,25 @@
 @import '../../styles/config.scss';
 
+
+// .nav-container{
+//   display: flex;
+// }
 header{
     display: flex;
     // flex-direction: row-reverse;
     // background: blue;
 }
+
+.title-image{
+  margin-top: 50px;
+}
+
 .nav-header {
     width:100vw;
     display: flex;
     align-items: center;
     flex-direction: row-reverse;
-    justify-content:space-between;
+    justify-content:center;
       
     ul {
     display:flex;

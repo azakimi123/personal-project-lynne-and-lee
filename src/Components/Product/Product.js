@@ -17,7 +17,7 @@ function Product(props){
 
     const handleCart = () => {
         props.cartReducer.cart.push(product[0])
-        props.cartReducer.cartTotal.push(product[0].price)
+        props.cartReducer.cartTotal.push(product[0].price *product[0].product_amount)
         alert(`item ${product[0].product_name} added to cart`)
     }
 
@@ -26,7 +26,7 @@ function Product(props){
     //     return newArr;
     //   }
 
-    // console.log(product)
+    // console.log(product[0])
     // console.log(props)
         return (
             <div>

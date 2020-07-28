@@ -14,7 +14,7 @@ function Header1(props) {
                 </section>
                 <section className='nav-header'>
                     <ul>
-                        <li><DropdownMenu/></li>
+                        {/* <li><DropdownMenu/></li> */}
                         <Link to='/'>
                             <li>HOME</li>
                         </Link>
