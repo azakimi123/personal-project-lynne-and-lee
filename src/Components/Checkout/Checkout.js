@@ -1,11 +1,25 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, isValidElement} from 'react';
 import {connect} from 'react-redux';
 import CardPayment from './CardPayment';
+import {addToCart} from '../../redux/cartReducer';
 import '../../App.scss';
 
 function Checkout(props){
     let [userCart, setUserCart] = useState([]);
     let [cartTotal, setCartTotal] = useState([0]);
+    let [amount, setAmount] = useState(1);
+
+
+    const handleAdd = (price) => {
+        setAmount(amount += 1)
+        cartTotal.push(price)
+    }
+
+    const handleSubtract = (price) => {
+        setAmount(amount -= 1)
+        cartTotal.push(-price)
+    }
+
 
     const handleTotal = (arr) => {
         const reducer = (accumulator, currentValue) => accumulator + currentValue;
@@ -19,15 +33,29 @@ function Checkout(props){
         setCartTotal([0]);
     }
 
-    // const handleRemove = (val) => {
-    //     props.cartReducer.cart.splice(val);
-    // }   
+    const productFinder2 = (id, price) => {
+        for (let property in userCart) {
+            console.log(price)
+            if(userCart[property].product_id === id) {
+                userCart.splice(property, 1);
+                let index = cartTotal.indexOf(price);
+                cartTotal.splice(index, 1);
+            }
+        }
+        props.history.push('/cart')
+    }
 
     useEffect(() => {
         setUserCart(props.cartReducer.cart)
         setCartTotal(props.cartReducer.cartTotal)
     }, [])
-    console.log(props.cartReducer.cart)
+
+    useEffect(() => {
+        setUserCart(props.cartReducer.cart)
+        setCartTotal(props.cartReducer.cartTotal)
+    }, [])
+
+    console.log(cartTotal)
         return (
             <div>
                 <p>Checkout</p>
@@ -41,11 +69,12 @@ function Checkout(props){
                                 <img className='card-product-pic' src={product.product_image1} alt={product.product_name} />
                             </div>
                             <section className='card-buttons'>
-                                <button>-</button>
-                                <p>{product.price}</p>
-                                <button>+</button>
+                                <button onClick={ () => handleSubtract(product.price)}>-</button>
+                                <p>{amount}</p>
+                                <button onClick={() => handleAdd(product.price)}>+</button>
                             </section>
-                                <button>REMOVE</button>
+                                <button onClick={() => productFinder2(product.product_id, product.price)}>REMOVE</button>
+                                {/* {console.log(userCart.findIndex(productIdFinder))} */}
                         </section>
                     </div>
                     ))}
@@ -57,4 +86,16 @@ function Checkout(props){
 
 const mapStateToProps = reduxState => reduxState;
 
-export default connect(mapStateToProps)(Checkout);
+export default connect(mapStateToProps, {addToCart})(Checkout);
+
+
+// for (let i = 0; i < props.cartReducer.cart.length; i++) {
+//     console.log(props.cartReducer.cart[i])
+//     for (let property in props.cartReducer.cart[i]) {
+//         if (property === "product_id") {
+//             userCart.push(props.cartReducer.cart[i][property])
+//         }
+//     }
+// }
+
+
