@@ -1,0 +1,38 @@
+
+.review-title{
+    font-size: 35px;
+    font-weight: 300;
+    margin-top: 45px;
+}
+.reviews-main{
+    display: inline-flex;
+}
+
+.reviews-cover-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.reviews-display-container{
+    width: 350px;
+    height: 200px;
+    margin: 30px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+    font-family: $font-stack;
+
+    img{
+        width: 10px;
+        margin: 5px;
+    }
+
+    .bottom-quotes{
+        width: 10px;
+        margin: 5px;
+        transform: scaleX(-1);
+    }
+}

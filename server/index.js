@@ -56,6 +56,6 @@ app.post('/api/addItem/:id', productCTRL.addItem);
 
 
 //review controllers
-
+app.get('/api/reviews', reviewCTRL.getReviews);
 
 app.listen(SERVER_PORT, () => console.log(`server is running on ${SERVER_PORT}`))

@@ -192,6 +192,9 @@ main {
     line-height: 35px;
     font-family: Georgia, "Times New Roman", Times, serif; }
 
+h2 {
+  font-family: Georgia, "Times New Roman", Times, serif; }
+
 .banner-cover-container {
   width: 100%;
   height: 500px;
@@ -240,12 +243,14 @@ main {
   width: 1000px;
   font-family: Georgia, "Times New Roman", Times, serif;
   line-height: 30px;
-  text-align: center; }
+  text-align: center;
+  margin-top: 35px; }
   .story-container p {
     font-size: 18px; }
   .story-container h2 {
     font-size: 35px;
-    font-weight: 300; }
+    font-weight: 200;
+    font-family: Georgia, "Times New Roman", Times, serif; }
 
 .picture-display-cover-container {
   display: flex;
@@ -260,6 +265,36 @@ main {
     height: 100%;
     width: 100%;
     object-fit: cover; }
+
+.review-title {
+  font-size: 35px;
+  font-weight: 300;
+  margin-top: 45px; }
+
+.reviews-main {
+  display: inline-flex; }
+
+.reviews-cover-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between; }
+
+.reviews-display-container {
+  width: 350px;
+  height: 200px;
+  margin: 30px;
+  font-size: 20px;
+  text-align: center;
+  line-height: 30px;
+  font-family: Georgia, "Times New Roman", Times, serif; }
+  .reviews-display-container img {
+    width: 10px;
+    margin: 5px; }
+  .reviews-display-container .bottom-quotes {
+    width: 10px;
+    margin: 5px;
+    transform: scaleX(-1); }
 
 .app-container {
   text-align: center; }
