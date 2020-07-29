@@ -12,10 +12,10 @@ const handleProductToggle = () => {
     if (props.productReducer.edit === false) {
         return <Product2 id={props.match.params.productId}/>;
         } else {
-            return <ProductEdit id={props.match.params.productId}/>
+            return <ProductEdit id={props.match.params.productId} backFn={props.history.goBack} />
         }
  }
-
+  
     console.log(props)
         return (
             <div>

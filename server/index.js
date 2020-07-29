@@ -51,6 +51,7 @@ app.post('/api/payment', stripeCTRL.payment);
 app.get('/api/products', productCTRL.allProducts);
 app.get('/api/product/:id', productCTRL.getOneProduct);
 app.post('/api/addItem/:id', productCTRL.addItem);
+app.put('/api/edit/:id', productCTRL.editProduct);
 
 //order controllers
 

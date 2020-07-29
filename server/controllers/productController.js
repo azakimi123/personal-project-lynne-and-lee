@@ -28,6 +28,18 @@ module.exports = {
         db.product.add_item({id, amount})
         .then(product => res.status(200).send(product))
         .catch(err => console.log(err))
+    },
+
+    editProduct: (req, res) => {
+        const db = req.app.get('db')
+
+        const {name, price, description, image1, image2, image3} = req.body;
+        const {id} = req.params;
+
+        console.log(req.body)
+        db.product.edit_product({name, price, description, image1, image2, image3, id})
+        .then(product => res.status(200).send(product))
+        .catch(err => console.log(err))
     }
 
 

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
-import {addToCart} from '../../redux/cartReducer';
+// import {addToCart} from '../../redux/cartReducer';
 import axios from 'axios';
 import '../../App.scss'
 
@@ -24,6 +24,14 @@ function ProductEdit(props){
             ))
     }, [])
 
+    const handleSubmit = () => {
+        axios.put(`/api/edit/${props.id}`, {image1, image2, image3, name, price, description})
+        .then(() => (
+            props.backFn()
+        ))
+        .catch(err => console.log(err))
+    }
+
     const handleImage1 = (input) => {
         setImage1(input);
     }
@@ -43,7 +51,7 @@ function ProductEdit(props){
         setDescription(input);
     }
     // console.log(product[0])
-    console.log(price)
+    console.log(props.id)
         return (
             <div>
                 <main>
@@ -57,7 +65,7 @@ function ProductEdit(props){
                                 className='edit-image'
                                 value={image2}
                                 placeholder='Image 2'
-                                onChange={(e) => handleImage2(e.target.value)}/>/>
+                                onChange={(e) => handleImage2(e.target.value)}/>
                         </div>
                         <div className='edit-thumbnail-container'>
                             <img className='edit-image-container-pic'  src={image3} alt={name}/>
@@ -65,7 +73,7 @@ function ProductEdit(props){
                                 className='edit-image'
                                 value={image3}
                                 placeholder='Image 3'
-                                onChange={(e) => handleImage3(e.target.value)}/>/>
+                                onChange={(e) => handleImage3(e.target.value)}/>
                         </div>
                     </section>
                     <section>
@@ -92,7 +100,10 @@ function ProductEdit(props){
                             value={description}
                             placeholder='Product Description'
                             onChange={(e) => handleDescription(e.target.value)}/>
-                        <button className='add-to-cart' >Submit</button>
+                        <button 
+                            className='add-to-cart' 
+                            onClick={handleSubmit}>Submit
+                        </button>
                     </section>
                 </main>
             </div>
@@ -101,4 +112,4 @@ function ProductEdit(props){
 
 const mapStateToProps = reduxState => reduxState;
 
-export default connect(mapStateToProps, {addToCart})(ProductEdit);
+export default connect(mapStateToProps)(ProductEdit);
