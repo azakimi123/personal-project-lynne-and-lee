@@ -25,11 +25,13 @@ function Footer() {
                     <p>Lehi UT, 85204</p>
                 </section>
                 <section className='footer-middle'>
-                    <p>LINKS</p>
-                    <p>Return Policy</p>
-                    <p>Terms and Conditions</p>
-                    <p>Privacy Policy</p>
-                    <p>Employment</p>
+                    <span>LINKS</span>
+                    <section className='footer-links'>
+                        <p>Return Policy</p>
+                        <p>Terms and Conditions</p>
+                        <p>Privacy Policy</p>
+                        <p>Employment</p>
+                    </section>
                 </section>
                 <section className='footer-right'>
                     <section  className='social-media-icons'>
