@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {clearUser, toggle, toggleAdmin} from '../../redux/userReducer';
+import {isEditing} from '../../redux/productReducer';
 import axios from 'axios';
 import '../../App.scss'
 
@@ -12,6 +13,7 @@ function AdminHeader(props) {
         .then(() => {
             props.toggle(false);
             props.toggleAdmin(false);
+            props.isEditing(false);
             props.clearUser();
             props.history.push('/');
         })
@@ -62,4 +64,4 @@ function AdminHeader(props) {
 
 const mapStateToProps = reduxState => reduxState;
 
-export default connect(mapStateToProps, {toggle, clearUser, toggleAdmin})(AdminHeader);
+export default connect(mapStateToProps, {toggle, clearUser, toggleAdmin, isEditing})(AdminHeader);

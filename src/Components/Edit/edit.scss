@@ -1,0 +1,45 @@
+@import '../../styles/config.scss';
+.edit-shop-container{
+    width: 80vw;
+    float: right;
+    margin-right: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* background: lightblue; */
+}
+
+.edit-product-card{
+    width: 350px;
+    height: 370px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5px;
+    margin: -10px;
+    /* background: blue; */
+}
+
+.edit-image-container{
+    @include image-container(300px, 250px);
+}
+.edit-product-pic{
+    @include images();
+}
+
+.edit-product-card-bottom{
+    width: 300px;
+    height: 100px;
+    margin-top: -25px;
+    margin-bottom: 25px;
+    text-align: left;
+    // background: purple;
+    display: flex;
+    flex-direction: column;
+    line-height: 5px;
+}
+
+.edit-price{
+    font-weight: 500;
+}

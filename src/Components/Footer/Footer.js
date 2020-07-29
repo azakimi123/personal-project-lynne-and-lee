@@ -40,7 +40,7 @@ function Footer() {
                         <img src='https://image.flaticon.com/icons/svg/1384/1384031.svg'  alt='instagram'/>
                     </section>
                     <section>
-                        <span>© 2020, Lynne & Lee</span><span>Powerd by </span>
+                        <span>© 2020, Lynne & Lee,</span><span> Powerd by </span>
                         <img className='footer-icon' src='https://image.flaticon.com/icons/svg/618/618731.svg' alt='flower heart'/>
                     </section>
                 </section>
