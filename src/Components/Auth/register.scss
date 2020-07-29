@@ -1,0 +1,43 @@
+.register-container-upper{
+    width: 600px;
+    height: 350px;
+    // background: lightsalmon;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 10px;
+
+    span{
+        margin-bottom: 10px;
+    }
+
+    input{
+        width: 580px;
+        height: 30px;
+        margin-bottom: 40px;
+        border-radius: 5px;
+        border-color: transparent;
+        box-shadow: $border-shadow;
+    }
+}
+
+.register-title{
+    margin-top: 65px;
+}
+
+.register-user-button{
+    margin-bottom: 45px;
+    width: 200px;
+    height: 50px;
+    background: white;
+    border-color: transparent;
+    box-shadow: $border-shadow;
+    font-size: 15px;
+    font-family: $font-stack;
+    opacity: 1;
+
+    &:hover{
+        opacity: .6;
+        cursor: pointer;
+    }
+}

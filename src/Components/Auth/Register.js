@@ -33,18 +33,24 @@ function Register(props) {
     // console.log(props)
     return(
         <div>
-            <h1>REGISTER PAGE</h1>
-            <span>USERNAME</span><input
-                value={username}
-                onChange={ e => setUsername(e.target.value)}/>
-            <span>EMAIL</span><input
-                value={email}
-                onChange={ e => setEmail(e.target.value)}/>
-            <span>PASSWORD</span><input
-                value={password}
-                type='password'
-                onChange={ e => setPassword(e.target.value)}/>
-            <button onClick={handleRegister}>CREATE ACCOUNT</button>
+            <section className='auth-cover-container'>
+                <section className='auth-container'>
+                    <h2 className='register-title'>REGISTER PAGE</h2>
+                    <section className='register-container-upper'>
+                        <span>USERNAME</span><input
+                            value={username}
+                            onChange={ e => setUsername(e.target.value)}/>
+                        <span>EMAIL</span><input
+                            value={email}
+                            onChange={ e => setEmail(e.target.value)}/>
+                        <span>PASSWORD</span><input
+                            value={password}
+                            type='password'
+                            onChange={ e => setPassword(e.target.value)}/>
+                    </section>
+                    <button  className='register-user-button' onClick={handleRegister}>CREATE ACCOUNT</button>
+                </section>
+            </section>
         </div>
     )
 }

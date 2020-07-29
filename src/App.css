@@ -580,5 +580,39 @@ h2 {
   border-radius: 18%;
   margin-bottom: 100px; }
 
+.register-container-upper {
+  width: 600px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 10px; }
+  .register-container-upper span {
+    margin-bottom: 10px; }
+  .register-container-upper input {
+    width: 580px;
+    height: 30px;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    border-color: transparent;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(0, 0, 0, 0.19); }
+
+.register-title {
+  margin-top: 65px; }
+
+.register-user-button {
+  margin-bottom: 45px;
+  width: 200px;
+  height: 50px;
+  background: white;
+  border-color: transparent;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
+  font-size: 15px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  opacity: 1; }
+  .register-user-button:hover {
+    opacity: .6;
+    cursor: pointer; }
+
 .app-container {
   text-align: center; }
