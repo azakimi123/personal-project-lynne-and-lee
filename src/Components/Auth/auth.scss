@@ -1,0 +1,75 @@
+// .auth-background{
+//     background-image: url('https://images.unsplash.com/photo-1536316754104-90daa92e4eb0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMDk0fQ&auto=format&fit=crop&w=1350&q=80');
+//     background-size: cover;
+//     background-repeat: no-repeat;
+// }
+
+.auth-cover-container{
+    @include centerMiddleFlex();
+    font-family: $font-stack;
+}
+
+.auth-container{
+    width: 800px;
+    height: 560px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: left;
+    border-color: transparent;
+    margin: 50px;
+    box-shadow: $border-shadow;
+    background: rgb(209, 209, 209);
+
+    h2{
+        font-weight: 300;
+    }
+}
+
+.auth-container-upper{
+    margin-top: 30px;
+    width: 600px;
+    height: 250px;
+    // background: lightsalmon;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    span{
+        margin-bottom: 10px;
+    }
+
+    input{
+        width: 580px;
+        height: 30px;
+        margin-bottom: 50px;
+        border-radius: 5px;
+        border-color: transparent;
+        box-shadow: $border-shadow;
+    }
+}
+
+.signin-button{
+    width: 200px;
+    height: 50px;
+    background: white;
+    border-color: transparent;
+    box-shadow: $border-shadow;
+    font-size: 15px;
+    font-family: $font-stack;
+    opacity: 1;
+
+    &:hover{
+        opacity: .6;
+        cursor: pointer;
+    }
+}
+
+.register-button{
+    @include link-style($text-color);
+
+    &:hover{
+        color: white;
+      }
+}

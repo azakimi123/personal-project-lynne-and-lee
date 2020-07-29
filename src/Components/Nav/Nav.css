@@ -20,5 +20,22 @@ header {
     list-style-type: none;
     text-decoration: none;
     color: black; }
+  .nav-header a {
+    position: relative; }
+  .nav-header a:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 8px;
+    left: 0;
+    background-color: black;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out; }
+  .nav-header a:hover:before {
+    color: lightgrey;
+    margin-left: 20px;
+    visibility: visible;
+    width: 50%; }
   .nav-header a:hover {
     color: lightgrey; }

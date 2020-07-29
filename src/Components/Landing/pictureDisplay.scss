@@ -13,5 +13,6 @@
 
     img{
         @include images();
+        box-shadow: $border-shadow;
     }
 }

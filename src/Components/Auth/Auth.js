@@ -30,18 +30,25 @@ function Auth(props) {
     }
     // console.log(props)
     return(
-        <div>
-            <span>EMAIL</span><input
-                value={email}
-                onChange={ e => setEmail(e.target.value)}/>
-            <span>PASSWORD</span><input
-                value={password}
-                type='password'
-                onChange={ e => setPassword(e.target.value)}/>
-            <button onClick={handleLogin}>SIGN IN</button>
-            <Link to='/register'>
-                <p>CREATE ACCOUNT</p>
-            </Link>
+        <div className='auth-background'>
+            <section className='auth-cover-container'>
+                <section className='auth-container'>
+                    <h2 className='auth-title'>LOGIN</h2>
+                    <section className='auth-container-upper'>
+                        <span>EMAIL</span><input
+                            value={email}
+                            onChange={ e => setEmail(e.target.value)}/>
+                        <span>PASSWORD</span><input
+                            value={password}
+                            type='password'
+                            onChange={ e => setPassword(e.target.value)}/>
+                    </section>
+                    <button className='signin-button' onClick={handleLogin}>SIGN IN</button>
+                    <Link className='register-button' to='/register'>
+                        <p>CREATE ACCOUNT</p>
+                    </Link>
+                </section>
+            </section>
         </div>
     )
 }

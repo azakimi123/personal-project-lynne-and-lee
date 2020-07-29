@@ -1,0 +1,7 @@
+.auth-cover-container {
+  display: flex; }
+
+.auth-container {
+  width: 800px;
+  height: 700px;
+  background: lightcoral; }
