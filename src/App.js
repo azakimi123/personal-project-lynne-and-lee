@@ -13,6 +13,7 @@ import Nav from './Components/Nav/Nav';
 // import Shop from './Components/Shop/Shop';
 // import ShopManager from './Components/ShopManager/ShopManager';
 // import ShopStats from './Components/ShopStats/ShopStats';
+import Footer from './Components/Footer/Footer';
 import routes from './routes';
 import './App.scss';
 
@@ -22,6 +23,7 @@ class App extends Component {
       <div className='app-container'>
         <Nav/>
         {routes}
+        <Footer/>
       </div>
     )
   }

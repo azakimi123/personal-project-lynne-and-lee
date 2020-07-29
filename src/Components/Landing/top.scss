@@ -6,10 +6,22 @@
     justify-content: center;
     margin: 0px;
     margin-top: 50px;
-    background-image: url('https://scontent.faus1-1.fna.fbcdn.net/v/t1.0-9/53243746_429993221082151_1424503552432144384_o.jpg?_nc_cat=111&_nc_sid=9267fe&_nc_ohc=gdxB4Z8h7UYAX-U3wLA&_nc_ht=scontent.faus1-1.fna&oh=86168c3390cec577394b16f1e9c8403b&oe=5F46F28B');
+    background-image: url('https://i.picsum.photos/id/696/4310/2864.jpg?hmac=jwUqQi3SVy1U14f8Ku4wwrF-VEifNP0FQkk7WIUqkw8');
     background-size: cover;
-    background-position: 0px -1000px;
+    // background-position: 0px -1000px;
     background-repeat: no-repeat;
+    z-index: -2;
+
+
+}
+.banner-img{
+    width: 100vw;
+    height: 500px;
+}
+
+.banner-image{
+    @include images();
+    z-index: -1;
 }
 
 .button-container{
@@ -21,7 +33,8 @@
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.19); 
     @include link-style($text-color);
     list-style-type: none;
-    opacity: .75;
+    opacity: .6;
+    z-index: 2;
 
     &:hover{
         opacity: 1;
@@ -31,6 +44,7 @@
 .landing-shop-btn{
     @include link-style($text-color);
     text-decoration: none;
+    z-index: 3;
 }
 
 .btn-text{
