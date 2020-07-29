@@ -23,8 +23,8 @@ function AdminHeader(props) {
         <div>
             <header>
                 <section>
-                    <p>YOU ARE LOGGED IN!!!</p>
-                    <p>{props.userReducer.user.username}</p>
+                    <img className='profile-pic' src='https://image.flaticon.com/icons/svg/848/848043.svg' alt='profile'/>
+                    <p className='username' >{props.userReducer.user.username}</p>
                 </section>
                 <section className='nav-header'>
                     <ul>
@@ -43,9 +43,13 @@ function AdminHeader(props) {
                         <Link to='/'>
                             <li onClick={handleLogOut}>LOG OUT</li>
                         </Link>
-                        <Link to='/manager'>
+                        <div className='dropdown'>
                             <li>SHOP MANAGER</li>
-                        </Link>
+                            <div className='dropdown-content'>
+                                <Link to='/edit'>EDIT PRODUCTS</Link>
+                                <Link to='/stats'>SHOP STATS</Link>
+                            </div>
+                        </div>
                         <Link to='/cart'>
                             <li>CART</li>
                         </Link>

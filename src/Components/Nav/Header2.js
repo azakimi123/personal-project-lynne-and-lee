@@ -22,8 +22,8 @@ function Header2(props) {
         <div>
             <header>
                 <section>
-                    <p>YOU ARE LOGGED IN!!!</p>
-                    <p>{props.userReducer.user.username}</p>
+                    <img className='profile-pic' src='https://image.flaticon.com/icons/svg/848/848043.svg' alt='profile'/>
+                    <p className='username' >{props.userReducer.user.username}</p>
                 </section>
                 <section className='nav-header'>
                     <ul>

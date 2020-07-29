@@ -1,8 +1,16 @@
 header {
-  display: flex; }
+  display: flex;
+  font-family: Georgia, "Times New Roman", Times, serif; }
 
 .title-image {
   margin-top: 50px; }
+
+.profile-pic {
+  width: 75px;
+  margin-left: 100px; }
+
+.username {
+  margin-left: 100px; }
 
 .nav-header {
   width: 100vw;
@@ -39,3 +47,24 @@ header {
     width: 50%; }
   .nav-header a:hover {
     color: lightgrey; }
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  z-index: 1; }
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  display: block;
+  text-align: left; }
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  transition: all 0.3s ease-in-out; }
