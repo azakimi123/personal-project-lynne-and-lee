@@ -35,7 +35,7 @@ function Register(props) {
         <div>
             <section className='auth-cover-container'>
                 <section className='auth-container'>
-                    <h2 className='register-title'>REGISTER PAGE</h2>
+                    <h2 className='register-title'>REGISTER A NEW ACCOUNT</h2>
                     <section className='register-container-upper'>
                         <span>USERNAME</span><input
                             value={username}
