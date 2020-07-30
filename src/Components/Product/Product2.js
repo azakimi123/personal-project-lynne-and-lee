@@ -17,7 +17,7 @@ function Product2(props){
 
     const handleCart = () => {
         props.cartReducer.cart.push(product[0])
-        props.cartReducer.cartTotal.push(product[0].price *product[0].product_amount)
+        props.cartReducer.cartTotal.push(product[0].price)
         alert(`item ${product[0].product_name} added to cart`)
     }
 

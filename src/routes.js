@@ -10,6 +10,7 @@ import Contact from './Components/Contact/Contact';
 import ShopManager from './Components/ShopManager/ShopManager';
 import ShopStats from './Components/ShopStats/ShopStats';
 import Edit from './Components/Edit/Edit';
+import AddProduct from './Components/AddProduct/AddProduct';
 import ProductEdit from './Components/ProductEdit/ProductEdit';
 import Checkout from './Components/Checkout/Checkout';
 
@@ -27,5 +28,6 @@ export default (
         <Route path='/stats' component={ShopStats} />
         <Route path='/edit' component={Edit} />
         <Route path='/edit/:productId' component={ProductEdit} />
+        <Route path='/addProduct' component={AddProduct} />
     </Switch>
 )

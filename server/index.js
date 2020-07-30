@@ -52,6 +52,8 @@ app.get('/api/products', productCTRL.allProducts);
 app.get('/api/product/:id', productCTRL.getOneProduct);
 app.post('/api/addItem/:id', productCTRL.addItem);
 app.put('/api/edit/:id', productCTRL.editProduct);
+app.post('/api/addProduct', productCTRL.addNewProduct);
+app.delete('/api/deleteProduct/:id', productCTRL.deleteProduct);
 
 //order controllers
 

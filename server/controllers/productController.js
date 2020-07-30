@@ -40,6 +40,25 @@ module.exports = {
         db.product.edit_product({name, price, description, image1, image2, image3, id})
         .then(product => res.status(200).send(product))
         .catch(err => console.log(err))
+    },
+
+    addNewProduct: (req, res) => {
+        const db = req.app.get('db')
+
+        const {name, price, description, image1, image2, image3} = req.body;
+        db.product.add_new_product({name, price, description, image1, image2, image3})
+        .then(product => res.status(200).send(product))
+        .catch(err => console.log(err))
+    },
+
+    deleteProduct: (req, res) => {
+        const db = req.app.get('db')
+        const{id} = req.params;
+
+        console.log('delete function hit')
+        db.product.delete_product({id})
+        .then( () => res.sendStatus(200))
+        .catch(err => console.log(err))
     }
 
 

@@ -49,6 +49,7 @@ function AdminHeader(props) {
                             <li>SHOP MANAGER</li>
                             <div className='dropdown-content'>
                                 <Link to='/edit'>EDIT PRODUCTS</Link>
+                                <Link to='/addProduct'>ADD NEW PRODUCT</Link>
                                 <Link to='/stats'>SHOP STATS</Link>
                             </div>
                         </div>
