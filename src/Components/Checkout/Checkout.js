@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
 import CardPayment from './CardPayment';
-import {addToCart, plusItem} from '../../redux/cartReducer';
+import {addToCart, plusItem, minusItem} from '../../redux/cartReducer';
 import '../../App.scss';
 
 function Checkout(props){
@@ -14,6 +14,7 @@ function Checkout(props){
 
     const handleAdd = (id) => {
         props.plusItem(id)
+        setUserCart(props.cartReducer.cart)
     }
 
     // const handleAdd = (id, amount, price) => {
@@ -25,9 +26,9 @@ function Checkout(props){
     //     }
     // }
 
-    const handleSubtract = (amount, price) => {
-        amount -= 1
-        cartTotal.push(-price)
+    const handleSubtract = (id) => {
+        props.minusItem(id)
+        setUserCart(props.cartReducer.cart)
     }
 
 
@@ -70,7 +71,7 @@ function Checkout(props){
                                 <img className='card-product-pic' src={product.image} alt={product.product_name} />
                             </div>
                             <section className='card-buttons'>
-                                <button onClick={ () => handleSubtract(product.amount, product.price)}>-</button>
+                                <button onClick={ () => handleSubtract(product.id)}>-</button>
                                 <p>{product.amount}</p>
                                 <button onClick={ () => handleAdd(product.id)}>+</button>
                             </section>
@@ -87,7 +88,7 @@ function Checkout(props){
 
 const mapStateToProps = reduxState => reduxState;
 
-export default connect(mapStateToProps, {addToCart, plusItem})(Checkout);
+export default connect(mapStateToProps, {addToCart, plusItem, minusItem})(Checkout);
 
 
 // for (let i = 0; i < props.cartReducer.cart.length; i++) {

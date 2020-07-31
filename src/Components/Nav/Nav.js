@@ -5,6 +5,7 @@ import Header1 from './Header1';
 import Header2 from './Header2';
 import AdminHeader from './AdminHeader';
 import '../../App.scss'
+import TitleImage from '../../images/title.png';
 
 function Nav(props) {
     // console.log(props)
@@ -24,7 +25,7 @@ const handleNavDisplay = () => {
     return (
         <div>
             <section className='nav-container'>
-                <img className='title-image' src='https://fontmeme.com/temporary/394e08b25409d0ede6a9d7d77c49648e.png' alt='lynne and lee'/>
+                <img className='title-image' src={TitleImage} alt='lynne and lee'/>
                 {handleNavDisplay()}
                 {/* {props.loggedIn === false ?
                 <Header1 /> :

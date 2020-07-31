@@ -3,6 +3,7 @@
 //     background-size: cover;
 //     background-repeat: no-repeat;
 // }
+@import '../../styles/config.scss';
 
 .auth-cover-container{
     @include centerMiddleFlex();

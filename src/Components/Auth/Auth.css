@@ -1,7 +1,57 @@
 .auth-cover-container {
-  display: flex; }
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif; }
 
 .auth-container {
-  width: 800px;
-  height: 700px;
-  background: lightcoral; }
+  width: 900px;
+  height: 560px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: left;
+  border-color: transparent;
+  margin: 50px;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
+  background-image: url("https://images.unsplash.com/photo-1530903677198-7c9f3577a63e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1124&q=80"); }
+  .auth-container h2 {
+    font-weight: 300; }
+
+.auth-container-upper {
+  margin-top: 30px;
+  width: 600px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .auth-container-upper span {
+    margin-bottom: 10px; }
+  .auth-container-upper input {
+    width: 580px;
+    height: 30px;
+    margin-bottom: 50px;
+    border-radius: 5px;
+    border-color: transparent;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(0, 0, 0, 0.19); }
+
+.signin-button {
+  width: 200px;
+  height: 50px;
+  background: white;
+  border-color: transparent;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
+  font-size: 15px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  opacity: 1; }
+  .signin-button:hover {
+    opacity: .6;
+    cursor: pointer; }
+
+.register-button {
+  list-style-type: none;
+  text-decoration: none;
+  color: black; }
+  .register-button:hover {
+    color: white; }
