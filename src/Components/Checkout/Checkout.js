@@ -6,25 +6,16 @@ import '../../App.scss';
 
 function Checkout(props){
     let [userCart, setUserCart] = useState(props.cartReducer.cart);
+    let [cartAmount, setCartAmount] = useState([{id:-1, cost:0}]);
     let [cartTotal, setCartTotal] = useState([0]);
-    // let [amount, setAmount] = useState(1)
-    useEffect(() => {
-        setCartTotal(props.cartReducer.cartTotal)
-    }, [])
+    // useEffect(() => {
+    //     setCartTotal(props.cartReducer.cartTotal)
+    // }, [])
 
     const handleAdd = (id) => {
         props.plusItem(id)
         setUserCart(props.cartReducer.cart)
     }
-
-    // const handleAdd = (id, amount, price) => {
-    //     for (let property in userCart) {
-    //         if(userCart[property].id === id) {
-    //             // console.log(userCart[property])
-    //             userCart[property].amount = userCart[property].amount + 1;
-    //         }
-    //     }
-    // }
 
     const handleSubtract = (id) => {
         props.minusItem(id)
@@ -33,8 +24,31 @@ function Checkout(props){
 
 
     const handleTotal = (arr) => {
+        let newArr = [0];
+        const {amount, price} = props.cartReducer.cart;
+        props.cartReducer.cart.map((product, index) => {
+            newArr.push(product.amount * product.price)
+            console.log(newArr)
+        })
         const reducer = (accumulator, currentValue) => accumulator + currentValue;
-        return arr.reduce(reducer);
+        return newArr.reduce(reducer);
+    }
+
+    // const handleTotal = () => {
+    //     let newArr = [];
+    //     newArr.push(itemCost());
+    //     const reducer = (accumulator, currentValue) => accumulator + currentValue;
+    //     return newArr.reduce(reducer);
+    // }
+
+    const itemCost = (amount, price, id) => {
+        // console.log(id)
+        let total = amount * price;
+        cartAmount.push({
+            id,
+            cost: total
+        })
+        return total;
     }
 
     const clearCart = () => {
@@ -57,7 +71,8 @@ function Checkout(props){
     }
 
 
-    console.log(props)
+    console.log(cartTotal)
+    console.log(props.cartReducer)
         return (
             <div>
                 <p>Checkout</p>
@@ -76,12 +91,12 @@ function Checkout(props){
                                 <button onClick={ () => handleAdd(product.id)}>+</button>
                             </section>
                                 <button onClick={ () => productFinder2(product.id, product.price)}>REMOVE</button>
-                                {/* {console.log(userCart.findIndex(productIdFinder))} */}
+                                <span>Item Amount: ${itemCost(product.amount, product.price, product.id)}</span>
                         </section>
                     </div>
                     ))}
                     <span>Total: ${handleTotal(cartTotal)}</span>
-                    <CardPayment total={handleTotal(cartTotal)} clearCartFn={clearCart}/>
+                    <CardPayment total={handleTotal(cartTotal)} clearCartFn={clearCart}/> 
             </div>
         )
     }

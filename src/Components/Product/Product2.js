@@ -23,7 +23,7 @@ function Product2(props){
             image: product[0].product_image1,
             amount: 1
         })
-        props.cartReducer.cartTotal.push(product[0].price)
+        // props.cartReducer.cartTotal.push(product[0].price)
         props.cartReducer.productAmount.push({
             id: product[0].product_id,
             amount: 1
