@@ -6,7 +6,7 @@ import StripeCheckout from 'react-stripe-checkout';
 
 function CardPayment(props) {
 
-    const onToken = async (token) => {
+    const onToken = async (token, addresses) => {
         token.card = void 0;
         // console.log(token)
         await axios.post('/api/payment', {token, amount: props.total * 100})
@@ -18,7 +18,7 @@ function CardPayment(props) {
         .catch(err => console.log(err))
     }
 
-    // console.log()
+    // console.log(onToken)
     return (
         <div>
             <StripeCheckout

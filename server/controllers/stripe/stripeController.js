@@ -12,6 +12,7 @@ module.exports = {
             amount,
             currency: 'usd',
             source: token.id,
+            receipt_email: token.email,
             description: 'Test Charge'
         }, function(err, charge) {
             if(err) {

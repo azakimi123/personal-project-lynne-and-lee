@@ -6,12 +6,13 @@ import '../../App.scss'
 
 function Product2(props){
     let [product, setProduct] = useState([{}]);
-    // let [images, setImages] = useState([]);
+    let [images, setImages] = useState([]);
+    let [index, setIndex] = useState(0)
     useEffect(() => {
         axios.get(`/api/product/${props.id}`).then(res => (
-            setProduct(res.data)
+            setProduct(res.data),
             // console.log(res.data)
-            // setImages([res.data[0].product_image1, res.data[0].product_image2, res.data[0].product_image3])
+            setImages([res.data[0].product_image1, res.data[0].product_image2, res.data[0].product_image3])
             ))
     }, [])
 
@@ -31,6 +32,22 @@ function Product2(props){
         alert(`item ${product[0].product_name} added to cart`)
     }
 
+    const handleNext = () => {
+        if(index >= 2) {
+            setIndex(0)
+        } else {
+            setIndex(index += 1)
+        }
+    }
+
+    const handleBack = () => {
+        if(index <= 0) {
+            setIndex(2)
+        } else {
+            setIndex(index -= 1)
+        }
+    }
+
     // const insertItem = (array) => {
     //     let newArr = array.push(product[0]);
     //     return newArr;
@@ -38,6 +55,7 @@ function Product2(props){
 
     // console.log(product[0])
     // console.log(props)
+    // console.log(images[0])
         return (
             <div>
                 <main>
@@ -54,7 +72,9 @@ function Product2(props){
                     </section>
                     <section>
                         <div className='main-pic-container'>
-                            <img className='main-image-container-pic'  src={product[0].product_image1} alt={product[0].product_name}/>
+                            <img className='main-image-container-pic'  src={images[index]} alt={product[0].product_name}/>
+                            <button className='back-btn' onClick={handleBack}>back</button>
+                            <button className='next-btn' onClick={handleNext}>next</button>
                         </div>
                     </section>
                     <section className='product-info'>
