@@ -7,6 +7,14 @@ const initialState = {
 const ADD_CART = 'ADD_CART';
 const PLUS_ITEM = 'PLUS_ITEM';
 const MINUS_ITEM = 'MINUS_ITEM';
+const FIND_TOTAL = 'FIND_TOTAL';
+
+export function findTotal(arr) {
+    return {
+        type: FIND_TOTAL,
+        payload: arr
+    }
+}
 
 export function addToCart(prodObj){
     return {
@@ -34,6 +42,8 @@ export default function reducer(state = initialState, action) {
     switch(type) {
         case ADD_CART:
             return {...state, cart: payload};
+        case FIND_TOTAL:
+            return {...state, cartTotal: payload}
         case PLUS_ITEM:
             return {
                 ...state, 
