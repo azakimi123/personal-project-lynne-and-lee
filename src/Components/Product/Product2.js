@@ -6,7 +6,7 @@ import '../../App.scss'
 
 function Product2(props){
     let [product, setProduct] = useState([{}]);
-    let [images, setImages] = useState([]);
+    // let [images, setImages] = useState([]);
     useEffect(() => {
         axios.get(`/api/product/${props.id}`).then(res => (
             setProduct(res.data)
@@ -16,8 +16,18 @@ function Product2(props){
     }, [])
 
     const handleCart = () => {
-        props.cartReducer.cart.push(product[0])
+        props.cartReducer.cart.push({
+            id: product[0].product_id,
+            name: product[0].product_name,
+            price: product[0].price,
+            image: product[0].product_image1,
+            amount: 1
+        })
         props.cartReducer.cartTotal.push(product[0].price)
+        props.cartReducer.productAmount.push({
+            id: product[0].product_id,
+            amount: 1
+        })
         alert(`item ${product[0].product_name} added to cart`)
     }
 
@@ -27,7 +37,7 @@ function Product2(props){
     //   }
 
     // console.log(product[0])
-    console.log(props)
+    // console.log(props)
         return (
             <div>
                 <main>

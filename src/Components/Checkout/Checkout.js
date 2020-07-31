@@ -1,21 +1,29 @@
-import React, {useState, useEffect, isValidElement} from 'react';
+import React, {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
-import axios from 'axios';
 import CardPayment from './CardPayment';
-import {addToCart} from '../../redux/cartReducer';
+import {addToCart, plusItem} from '../../redux/cartReducer';
 import '../../App.scss';
 
 function Checkout(props){
-    let [userCart, setUserCart] = useState([]);
+    let [userCart, setUserCart] = useState(props.cartReducer.cart);
     let [cartTotal, setCartTotal] = useState([0]);
+    // let [amount, setAmount] = useState(1)
+    useEffect(() => {
+        setCartTotal(props.cartReducer.cartTotal)
+    }, [])
 
-
-    const handleAdd = (id, amount, price) => {
-        axios.post(`/api/addItem/${id}`, {amount : amount++})
-        .then((res) => {
-            console.log(res.config.data.amount) 
-        })
+    const handleAdd = (id) => {
+        props.plusItem(id)
     }
+
+    // const handleAdd = (id, amount, price) => {
+    //     for (let property in userCart) {
+    //         if(userCart[property].id === id) {
+    //             // console.log(userCart[property])
+    //             userCart[property].amount = userCart[property].amount + 1;
+    //         }
+    //     }
+    // }
 
     const handleSubtract = (amount, price) => {
         amount -= 1
@@ -37,8 +45,8 @@ function Checkout(props){
 
     const productFinder2 = (id, price) => {
         for (let property in userCart) {
-            console.log(price)
-            if(userCart[property].product_id === id) {
+            // console.log(price)
+            if(userCart[property].id === id) {
                 userCart.splice(property, 1);
                 let index = cartTotal.indexOf(price);
                 cartTotal.splice(index, 1);
@@ -47,15 +55,6 @@ function Checkout(props){
         props.history.push('/cart')
     }
 
-    useEffect(() => {
-        setUserCart(props.cartReducer.cart)
-        setCartTotal(props.cartReducer.cartTotal)
-    }, [])
-
-    useEffect(() => {
-        setUserCart(props.cartReducer.cart)
-        setCartTotal(props.cartReducer.cartTotal)
-    }, [])
 
     console.log(props)
         return (
@@ -64,18 +63,18 @@ function Checkout(props){
                     {userCart.map((product, index) => (
                     <div className='cart-card' key={index}>
                         <section>
-                            <p>{product.product_name}</p>
+                            <p>{product.name}</p>
                         </section>
                         <section className='second-cart-card'>
                             <div className='card-pic-container'>
-                                <img className='card-product-pic' src={product.product_image1} alt={product.product_name} />
+                                <img className='card-product-pic' src={product.image} alt={product.product_name} />
                             </div>
                             <section className='card-buttons'>
-                                <button onClick={ () => handleSubtract(product.product_amount, product.price)}>-</button>
-                                <p>{product.product_amount}</p>
-                                <button onClick={() => handleAdd(product.product_id, product.product_amount, product.price)}>+</button>
+                                <button onClick={ () => handleSubtract(product.amount, product.price)}>-</button>
+                                <p>{product.amount}</p>
+                                <button onClick={ () => handleAdd(product.id)}>+</button>
                             </section>
-                                <button onClick={() => productFinder2(product.product_id, product.price)}>REMOVE</button>
+                                <button onClick={ () => productFinder2(product.id, product.price)}>REMOVE</button>
                                 {/* {console.log(userCart.findIndex(productIdFinder))} */}
                         </section>
                     </div>
@@ -88,7 +87,7 @@ function Checkout(props){
 
 const mapStateToProps = reduxState => reduxState;
 
-export default connect(mapStateToProps, {addToCart})(Checkout);
+export default connect(mapStateToProps, {addToCart, plusItem})(Checkout);
 
 
 // for (let i = 0; i < props.cartReducer.cart.length; i++) {
@@ -99,5 +98,8 @@ export default connect(mapStateToProps, {addToCart})(Checkout);
 //         }
 //     }
 // }
+
+
+// onChange={e => setAmount(e.target.value)}
 
 

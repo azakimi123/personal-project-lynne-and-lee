@@ -1,7 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {connect} from 'react-redux';
 import {addToCart} from '../../redux/cartReducer';
-import axios from 'axios';
 import Product2 from './Product2';
 import ProductEdit from '../ProductEdit/ProductEdit';
 import '../../App.scss'
@@ -16,7 +15,7 @@ const handleProductToggle = () => {
         }
  }
   
-    console.log(props)
+    // console.log(props)
         return (
             <div>
                 {handleProductToggle()}

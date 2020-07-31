@@ -1,29 +1,41 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {connect} from 'react-redux';
+import {toggle, toggleAdmin} from '../../redux/userReducer';
 // import {addToCart} from '../../redux/cartReducer';
 import axios from 'axios';
 import '../../App.scss'
 
 function AddProduct(props){
-    let [product, setProduct] = useState([{}]);
+    // let [product, setProduct] = useState([{}]);
     let [image1, setImage1] = useState();
     let [image2, setImage2] = useState();
     let [image3, setImage3] = useState();
     let [name, setName] = useState();
     let [price, setPrice] = useState();
     let [description, setDescription] = useState();
+    // let [loggedIn, setLoggedIn] = useState();
+    // let [isAdmin, setAdmin] = useState();
+
+    // useEffect(() => {
+
+    //     if(loggedIn === true && isAdmin === true){
+    //         props.toggle(true)
+    //         props.toggleAdmin(true)
+    //     }
+    // }, [])
 
     const handleAddProduct = () => {
         axios.post(`/api/addProduct`, {image1, image2, image3, name, price, description})
-        .then(() => (
-            alert('Product Added'),
-            setImage1(''),
-            setImage2(''),
-            setImage3(''),
-            setName(''),
-            setPrice(null),
+        .then(() => {
+            alert('Product Added')
+            setImage1('')
+            setImage2('')
+            setImage3('')
+            setName('')
+            setPrice(null)
             setDescription('')
-        ))
+            // window.location.reload(true) 
+        })
         .catch(err => console.log(err))
     }
 
@@ -108,4 +120,4 @@ function AddProduct(props){
 
 const mapStateToProps = reduxState => reduxState;
 
-export default connect(mapStateToProps)(AddProduct);
+export default connect(mapStateToProps, {toggle, toggleAdmin})(AddProduct);

@@ -5,7 +5,7 @@ import axios from 'axios';
 import '../../App.scss'
 
 function ProductEdit(props){
-    let [product, setProduct] = useState([{}]);
+    // let [product, setProduct] = useState([{}]);
     let [image1, setImage1] = useState([{}]);
     let [image2, setImage2] = useState([{}]);
     let [image3, setImage3] = useState([{}]);
@@ -13,15 +13,15 @@ function ProductEdit(props){
     let [price, setPrice] = useState([]);
     let [description, setDescription] = useState([]);
     useEffect(() => {
-        axios.get(`/api/product/${props.id}`).then(res => (
-            setProduct(res.data),
-            setImage1(res.data[0].product_image1),
-            setImage2(res.data[0].product_image2),
-            setImage3(res.data[0].product_image3),
-            setName(res.data[0].product_name),
-            setPrice(res.data[0].price),
+        axios.get(`/api/product/${props.id}`).then(res => {
+            // setProduct(res.data),
+            setImage1(res.data[0].product_image1)
+            setImage2(res.data[0].product_image2)
+            setImage3(res.data[0].product_image3)
+            setName(res.data[0].product_name)
+            setPrice(res.data[0].price)
             setDescription(res.data[0].product_description)
-            ))
+        })
     }, [])
 
     const handleSubmit = () => {

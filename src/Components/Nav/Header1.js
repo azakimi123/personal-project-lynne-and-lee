@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import DropdownMenu from '../Dropdown/DropdownMenu';
+// import DropdownMenu from '../Dropdown/DropdownMenu';
 import '../../App.scss'
 
 function Header1(props) {
