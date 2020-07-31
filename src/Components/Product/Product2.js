@@ -73,8 +73,10 @@ function Product2(props){
                     <section>
                         <div className='main-pic-container'>
                             <img className='main-image-container-pic'  src={images[index]} alt={product[0].product_name}/>
-                            <button className='back-btn' onClick={handleBack}>back</button>
-                            <button className='next-btn' onClick={handleNext}>next</button>
+                            {/* <button className='back-btn' onClick={handleBack}>back</button> */}
+                            {/* <button className='next-btn' onClick={handleNext}>next</button> */}
+                            <img className='back-btn' onClick={handleBack} src='https://image.flaticon.com/icons/svg/860/860790.svg' alt='back arrow'/>
+                            <img className='next-btn' onClick={handleNext} src='https://image.flaticon.com/icons/svg/860/860828.svg' alt='next arrow'/>
                         </div>
                     </section>
                     <section className='product-info'>

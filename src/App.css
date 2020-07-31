@@ -173,6 +173,26 @@ main {
     background: grey;
     cursor: pointer; }
 
+.next-btn {
+  width: 30px;
+  position: relative;
+  bottom: 60px;
+  left: 250px; }
+  .next-btn:hover {
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    transform: scale(1.5); }
+
+.back-btn {
+  width: 30px;
+  position: relative;
+  bottom: 60px;
+  right: 250px; }
+  .back-btn:hover {
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    transform: scale(1.5); }
+
 .cart-card {
   width: 600px;
   height: 200px;
