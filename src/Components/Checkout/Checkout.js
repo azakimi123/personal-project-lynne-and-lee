@@ -84,28 +84,39 @@ function Checkout(props){
     console.log(props.cartReducer)
         return (
             <div>
-                <p>Checkout</p>
-                    {userCart.map((product, index) => (
-                    <div className='cart-card' key={index}>
-                        <section>
-                            <p>{product.name}</p>
-                        </section>
-                        <section className='second-cart-card'>
-                            <div className='card-pic-container'>
-                                <img className='card-product-pic' src={product.image} alt={product.product_name} />
-                            </div>
-                            <section className='card-buttons'>
-                                <button onClick={ () => handleSubtract(product.id)}>-</button>
-                                <p>{product.amount}</p>
-                                <button onClick={ () => handleAdd(product.id)}>+</button>
+                <section className='checkout-container'>
+                    <p>Checkout</p>
+                        {userCart.map((product, index) => (
+                        <div className='cart-card' key={index}>
+                            <section>
+                                <p>{product.name}</p>
                             </section>
-                                <button onClick={ () => productFinder2(product.id, product.price, product.amount)}>REMOVE</button>
-                                <span>Item Amount: ${itemCost(product.amount, product.price, product.id)}</span>
+                            <section className='second-cart-card'>
+                                <div className='card-pic-container'>
+                                    <img className='card-product-pic' src={product.image} alt={product.product_name} />
+                                </div>
+                                <section className='card-buttons'>
+                                    {/* <button onClick={ () => handleSubtract(product.id)}>-</button> */}
+                                    <img onClick={ () => handleSubtract(product.id)} 
+                                        src='https://image.flaticon.com/icons/svg/864/864373.svg' alt='minus button'/>
+                                    <p>{product.amount}</p>
+                                    {/* <button onClick={ () => handleAdd(product.id)}>+</button> */}
+                                    <img onClick={ () => handleAdd(product.id)} 
+                                        src='https://image.flaticon.com/icons/svg/864/864378.svg' alt='add button'/>
+                                </section>
+                                    <span>Item Amount: ${itemCost(product.amount, product.price, product.id)}</span>
+                                    {/* <button className='remove-btn' onClick={ () => productFinder2(product.id, product.price, product.amount)}>REMOVE</button> */}
+                                    <img className='remove-btn' 
+                                        onClick={ () => productFinder2(product.id, product.price, product.amount)} 
+                                        src='https://image.flaticon.com/icons/svg/1828/1828947.svg' alt='remove button'/>
+                            </section>
+                        </div>
+                        ))}
+                        <section className='checkout-bottom'>
+                            <span className='total-amount'>Total: ${total ? total : totalCost}</span>
+                            <CardPayment className='proceed-to-checkout' total={handleTotal(cartTotal)} clearCartFn={clearCart}/> 
                         </section>
-                    </div>
-                    ))}
-                    <span>Total: ${total ? total : totalCost}</span>
-                    <CardPayment total={handleTotal(cartTotal)} clearCartFn={clearCart}/> 
+                </section>
             </div>
         )
     }
