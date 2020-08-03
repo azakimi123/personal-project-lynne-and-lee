@@ -3,4 +3,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Landing Page
 
 
-![Uploading ezgif.com-video-to-gif.gif…]()
+
