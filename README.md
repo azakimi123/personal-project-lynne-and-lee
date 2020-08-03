@@ -1,4 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Landing Page
-<img src='https://www.loom.com/share/2450a52c50e2413c9afff3c0769f47e0' alt='landing page view'/>
+
+<img src='https://user-images.githubusercontent.com/52367677/89212276-6c6f8700-d580-11ea-9b21-daea0a7fbdd4.gif' alt='landing page view'>
+
