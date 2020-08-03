@@ -11,7 +11,7 @@ function Reviews() {
         axios.get('/api/reviews').then(res => setReviewList(res.data))
     }, [])
 
-    console.log(reviewList[0])
+    // console.log(reviewList[0])
     return(
         <div>
             <h2 className='review-title'>REVIEWS</h2>

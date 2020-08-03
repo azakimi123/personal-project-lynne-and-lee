@@ -6,7 +6,7 @@ const stripe = require('stripe')(SECRET_KEY);
 module.exports = {
     payment: (req, res) => {
         const {token, amount} = req.body;
-        console.log(token)
+        // console.log(token)
 
         const charge = stripe.charges.create({
             amount,

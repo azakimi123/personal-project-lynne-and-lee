@@ -1,5 +1,5 @@
 import React from 'react';
-// import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import '../../App.scss';
 
 
@@ -35,9 +35,15 @@ function Footer() {
                 </section>
                 <section className='footer-right'>
                     <section  className='social-media-icons'>
-                        <img src='https://image.flaticon.com/icons/svg/1051/1051360.svg'  alt='facebook icon'/>
-                        <img src='https://image.flaticon.com/icons/svg/49/49440.svg'  alt='pinterest icon'/>
-                        <img src='https://image.flaticon.com/icons/svg/1384/1384031.svg'  alt='instagram'/>
+                        <a href='https://www.facebook.com/lynne.and.lee' target='_blank'>
+                            <img src='https://image.flaticon.com/icons/svg/1051/1051360.svg'  alt='facebook icon'/>
+                        </a>
+                        <a href='https://www.pinterest.com/lynneandlee/' target='_blank'>
+                            <img src='https://image.flaticon.com/icons/svg/49/49440.svg'  alt='pinterest icon'/>
+                        </a>
+                        <a href='https://www.instagram.com/lynne.and.lee/?hl=en' target='_blank'>
+                            <img src='https://image.flaticon.com/icons/svg/1384/1384031.svg'  alt='instagram'/>
+                        </a>
                     </section>
                     <section>
                         <span>© 2020, Lynne & Lee,</span><span> Powerd by </span>
