@@ -49,7 +49,7 @@ export default function reducer(state = initialState, action) {
                 ...state, 
                 cart: state.cart.map(product => {
                     if (product.id === payload) {
-                        return {...product, amount: product.amount += 1}
+                        return {...product, ...product.amount, amount: product.amount += 1}
                     } else {
                         return product}
                 }),

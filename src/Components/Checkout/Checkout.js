@@ -8,19 +8,22 @@ function Checkout(props){
     let [userCart, setUserCart] = useState(props.cartReducer.cart);
     let [cartAmount, setCartAmount] = useState([{id:-1, cost:0}]);
     let [cartTotal, setCartTotal] = useState([0]);
-    let [total, setTotal] = useState()
-    // useEffect(() => {
-    //     setCartTotal(props.cartReducer.cartTotal)
-    // }, [])
+    let [total, setTotal] = useState(0);
+    let [totalCost, setTotalCost] = useState();
+    useEffect(() => {
+        setTotalCost(handleTotal())
+    }, [])
 
     const handleAdd = (id) => {
         props.plusItem(id)
-        setUserCart(props.cartReducer.cart)
+        // setUserCart(props.cartReducer.cart)
+        setTotalCost(handleTotal())
     }
 
     const handleSubtract = (id) => {
         props.minusItem(id)
-        setUserCart(props.cartReducer.cart)
+        // setUserCart(props.cartReducer.cart)
+        setTotalCost(handleTotal())
     }
 
 
@@ -30,7 +33,7 @@ function Checkout(props){
         props.cartReducer.cart.map((product, index) => {
             newArr.push(product.amount * product.price)
         })
-        cartTotal = newArr;
+        // totalCost = newArr;
         const reducer = (accumulator, currentValue) => accumulator + currentValue;
         return newArr.reduce(reducer)  
         }
@@ -55,20 +58,20 @@ function Checkout(props){
     const clearCart = () => {
         props.cartReducer.cart.splice(0);
         props.cartReducer.cartTotal = [0];
-        setUserCart([]);
-        setTotal(0);
+        props.cartReducer.cart.splice(0)
+        setTotalCost(0);
     }
 
-    let totalCost = handleTotal();
+    // let totalCost = handleTotal();
     const productFinder2 = (id, price, amount) => {
         // console.log(price)
-        for (let property in userCart) {
+        for (let property in props.cartReducer.cart) {
             let deduction = price * amount;
             console.log(deduction)
-            if(userCart[property].id === id) {
+            if(props.cartReducer.cart[property].id === id) {
                 console.log('hello1')
-                userCart.splice(property, 1)
-                setTotal(totalCost -= deduction)
+                props.cartReducer.cart.splice(property, 1)
+                setTotalCost(totalCost -= deduction)
                 totalCost -= deduction
                 props.history.push('/cart')
                 // console.log(totalCost)
@@ -80,13 +83,16 @@ function Checkout(props){
 
 
     
-    console.log(totalCost)
+    console.log(`totalCost = ${totalCost}`)
+    // console.log(`total = ${total}`)
+    // console.log(props.cartReducer)
+    console.log(userCart)
     console.log(props.cartReducer)
         return (
             <div>
                 <section className='checkout-container'>
                     <p>Checkout</p>
-                        {userCart.map((product, index) => (
+                        {props.cartReducer.cart.map((product, index) => (
                         <div className='cart-card' key={index}>
                             <section>
                                 <p>{product.name}</p>
@@ -113,8 +119,10 @@ function Checkout(props){
                         </div>
                         ))}
                         <section className='checkout-bottom'>
-                            <span className='total-amount'>Total: ${total ? total : totalCost}</span>
-                            <CardPayment className='proceed-to-checkout' total={handleTotal(cartTotal)} clearCartFn={clearCart}/> 
+                            {/* <span className='total-amount'>Total: ${total ? total : totalCost}</span> */}
+                            <span className='total-amount'>Total: ${totalCost}</span>
+                            {/* <span className='total-amount'>Total: ${total}</span> */}
+                            <CardPayment className='proceed-to-checkout' total={totalCost} clearCartFn={clearCart}/> 
                         </section>
                 </section>
             </div>
@@ -135,6 +143,8 @@ export default connect(mapStateToProps, {addToCart, plusItem, minusItem, findTot
 //     }
 // }
 
+
+// total={handleTotal(cartTotal)}
 
 // onChange={e => setAmount(e.target.value)}
 
