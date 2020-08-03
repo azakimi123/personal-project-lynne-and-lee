@@ -2,6 +2,7 @@
 import React from 'react';
 import axios from 'axios';
 import StripeCheckout from 'react-stripe-checkout';
+import { connect } from 'react-redux';
 
 
 function CardPayment(props) {
@@ -13,12 +14,21 @@ function CardPayment(props) {
         .then((res) => {
             props.clearCartFn()
             alert('Payment Submitted')
+            createOrder()
             console.log(res.data)
         })
         .catch(err => console.log(err))
     }
 
-    // console.log(onToken)
+    const createOrder = () => {
+        axios.post('/api/createOrder', {id: props.userReducer.user.user_id})
+        .then(() => {
+            console.log(`order added to db`)
+        })
+        .catch(err => console.log(err))
+    }
+
+    console.log(props)
     return (
         <div>
             <StripeCheckout
@@ -32,6 +42,9 @@ function CardPayment(props) {
     )
 }
 
-export default CardPayment;
+const mapStateToProps = reduxState => reduxState;
+
+
+export default connect(mapStateToProps)(CardPayment);
 
 // 
