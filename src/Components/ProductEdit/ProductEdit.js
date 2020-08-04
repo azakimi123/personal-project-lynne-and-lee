@@ -32,24 +32,24 @@ function ProductEdit(props){
         .catch(err => console.log(err))
     }
 
-    const handleImage1 = (input) => {
-        setImage1(input);
-    }
-    const handleImage2 = (input) => {
-        setImage2(input);
-    }
-    const handleImage3 = (input) => {
-        setImage3(input);
-    }
-    const handleName = (input) => {
-        setName(input);
-    }
-    const handlePrice = (input) => {
-        setPrice(input);
-    }
-    const handleDescription = (input) => {
-        setDescription(input);
-    }
+    // const handleImage1 = (input) => {
+    //     setImage1(input);
+    // }
+    // const handleImage2 = (input) => {
+    //     setImage2(input);
+    // }
+    // const handleImage3 = (input) => {
+    //     setImage3(input);
+    // }
+    // const handleName = (input) => {
+    //     setName(input);
+    // }
+    // const handlePrice = (input) => {
+    //     setPrice(input);
+    // }
+    // const handleDescription = (input) => {
+    //     setDescription(input);
+    // }
     // console.log(product[0])
     console.log(props.id)
         return (
@@ -65,7 +65,7 @@ function ProductEdit(props){
                                 className='edit-image'
                                 value={image2}
                                 placeholder='Image 2'
-                                onChange={(e) => handleImage2(e.target.value)}/>
+                                onChange={(e) => setImage2(e.target.value)}/>
                         </div>
                         <div className='edit-thumbnail-container'>
                             <img className='edit-image-container-pic'  src={image3} alt={name}/>
@@ -73,7 +73,7 @@ function ProductEdit(props){
                                 className='edit-image'
                                 value={image3}
                                 placeholder='Image 3'
-                                onChange={(e) => handleImage3(e.target.value)}/>
+                                onChange={(e) => setImage3(e.target.value)}/>
                         </div>
                     </section>
                     <section>
@@ -83,23 +83,23 @@ function ProductEdit(props){
                                 className='edit-image1'
                                 value={image1}
                                 placeholder='Image 1'
-                                onChange={(e) => handleImage1(e.target.value)}/>
+                                onChange={(e) => setImage1(e.target.value)}/>
                         </div>
                     </section>
                     <section className='product-info'>
                         <input className='edit-product-title'
                             value={name}
                             placeholder='Product Title'
-                            onChange={(e) => handleName(e.target.value)}/>
+                            onChange={(e) => setName(e.target.value)}/>
                         <span>$</span><input className='edit-product-price'
                             value={price}
                             placeholder='Price'
-                            onChange={(e) => handlePrice(e.target.value)}/>
+                            onChange={(e) => setPrice(e.target.value)}/>
                         <p></p>
                         <textarea className='edit-product-description'
                             value={description}
                             placeholder='Product Description'
-                            onChange={(e) => handleDescription(e.target.value)}/>
+                            onChange={(e) => setDescription(e.target.value)}/>
                         <button 
                             className='add-to-cart' 
                             onClick={handleSubmit}>Submit
