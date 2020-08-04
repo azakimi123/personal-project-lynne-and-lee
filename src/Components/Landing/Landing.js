@@ -4,9 +4,11 @@ import OurStory from './OurStory';
 import PictureDisplay from './PictureDisplay';
 import Reviews from './Reviews';
 import '../../App.scss';
+import { connect } from 'react-redux';
 // import routes from '../../routes';
 
-function Landing() {
+function Landing(props) {
+    console.log(props)
     return (
         <div>
             <Top />
@@ -17,4 +19,4 @@ function Landing() {
     )
 }
 
-export default Landing;
+export default connect()(Landing);

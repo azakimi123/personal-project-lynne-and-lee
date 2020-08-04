@@ -1,5 +1,4 @@
 import React from 'react';
-// import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import Header1 from './Header1';
 import Header2 from './Header2';
@@ -21,7 +20,7 @@ const handleNavDisplay = () => {
         return <Header2 />
     }
 }
-// console.log(props)
+console.log(props)
     return (
         <div>
             <section className='nav-container'>

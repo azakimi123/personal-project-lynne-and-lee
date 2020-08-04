@@ -598,9 +598,11 @@ h2 {
   width: 25px;
   position: relative;
   margin-top: -230px;
-  z-index: 1; }
+  z-index: 1;
+  opacity: .4; }
   .edit-delete-btn:hover {
-    cursor: pointer; }
+    cursor: pointer;
+    opacity: .6; }
 
 .edit-button {
   width: 75px;

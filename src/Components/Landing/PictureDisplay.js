@@ -1,8 +1,10 @@
 import React from 'react';
 import '../../App.scss';
+// import {connect} from 'react-redux';
 
 
-function PictureDisplay() {
+function PictureDisplay(props) {
+    // console.log(props)
     return(
         <div>
             <section className='picture-display-cover-container'>
@@ -19,5 +21,7 @@ function PictureDisplay() {
         </div>
     )
 }
+
+
 
 export default PictureDisplay;

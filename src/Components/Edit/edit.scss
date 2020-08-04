@@ -56,9 +56,11 @@
     position: relative;
     margin-top: -230px;
     z-index:1;
+    opacity: .4;
 
     &:hover{
         cursor: pointer;
+        opacity: .6;
     }
 }
 
