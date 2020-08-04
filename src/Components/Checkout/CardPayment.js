@@ -7,15 +7,14 @@ import { connect } from 'react-redux';
 
 function CardPayment(props) {
 
-    const onToken = async (token, addresses) => {
+    const onToken = async (token) => {
         token.card = void 0;
         // console.log(token)
         await axios.post('/api/payment', {token, amount: props.total * 100})
         .then((res) => {
-            props.clearCartFn()
             alert('Payment Submitted')
             createOrder()
-            console.log(res.data)
+            // console.log(res.data)
         })
         .catch(err => console.log(err))
     }
@@ -24,6 +23,11 @@ function CardPayment(props) {
         axios.post('/api/createOrder', {id: props.userReducer.user.user_id})
         .then(() => {
             console.log(`order added to db`)
+
+            props.cartReducer.cart.map((product, index) => (
+                axios.post('/api/orderItem', {productId: product.id})
+            ))
+            props.clearCartFn()
         })
         .catch(err => console.log(err))
     }
