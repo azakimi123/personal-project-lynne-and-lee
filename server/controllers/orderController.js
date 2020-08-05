@@ -40,5 +40,15 @@ module.exports = {
         .then( data => {
             res.status(200).send(data)})
         .catch( err => res.status(500).send(console.log(err)))
+    },
+
+    orderTotal: (req, res) => {
+        const db = req.app.get('db');
+
+        console.log(`order totals hit`)
+        db.order.order_totals()
+        .then( data => {
+            res.status(200).send(data)})
+        .catch( err => res.status(500).send(console.log(err)))
     }
 }

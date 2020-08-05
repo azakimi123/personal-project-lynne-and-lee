@@ -60,6 +60,7 @@ app.delete('/api/deleteProduct/:id', productCTRL.deleteProduct);
 app.post('/api/createOrder', orderCTRL.createOrder);
 app.post('/api/orderItem', orderCTRL.addOrderItem);
 app.get('/api/orderItemData', orderCTRL.orderItemData);
+app.get('/api/orderTotals', orderCTRL.orderTotal);
 // app.get('/api/orderCount', orderCTRL.count);
 
 

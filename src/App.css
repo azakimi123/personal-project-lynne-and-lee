@@ -687,5 +687,16 @@ h2 {
     opacity: .6;
     cursor: pointer; }
 
+.chart-container {
+  width: 100vw;
+  height: 900px;
+  margin-top: 50px;
+  margin-bottom: -200px;
+  display: flex;
+  justify-content: center; }
+
+.chart {
+  width: 900px; }
+
 .app-container {
   text-align: center; }

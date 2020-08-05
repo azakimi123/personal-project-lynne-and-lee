@@ -1,0 +1,17 @@
+@import '../../styles/config.scss';
+
+
+.chart-container{
+    width: 100vw;
+    height: 900px;
+    margin-top: 50px;
+    margin-bottom: -200px;
+    display: flex;
+    justify-content: center;
+    // background: grey;
+}
+
+.chart{
+    width: 900px;
+    // height: 900px;
+}
