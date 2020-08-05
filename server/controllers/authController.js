@@ -51,6 +51,16 @@ module.exports = {
             }
         },
 
+    getUser: (req, res) => {
+        const db = req.app.get('db');
+        const {user_id} = req.session.user;
+        console.log('user info retrieved')
+        // console.log(req.session.user)
+        db.users.get_user({user_id})
+        .then( info => res.status(200).send(info))
+        .catch(err => console.log(err))
+    },
+
     logout: (req, res) => {
         console.log('log out worked')
         req.session.destroy();

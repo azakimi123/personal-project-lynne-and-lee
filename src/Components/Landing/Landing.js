@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 // import routes from '../../routes';
 
 function Landing(props) {
-    console.log(props)
+    // console.log(props)
     return (
         <div>
             <Top />

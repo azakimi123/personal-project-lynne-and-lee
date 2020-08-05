@@ -39,6 +39,7 @@ massive({
 //auth controllers
 app.post('/auth/register', authCTRL.register);
 app.post('/auth/login', authCTRL.login);
+app.get('/auth/getUser', authCTRL.getUser);
 app.post('/auth/logout', authCTRL.logout);
 
 //mail controllers

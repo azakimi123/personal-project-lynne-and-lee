@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import axios from 'axios';
+import {connect} from 'react-redux';
 // import About from './Components/About/About';
 // import Auth from './Components/Auth/Auth';
 // import Chart1 from './Components/Chart1/Chart1'
@@ -13,20 +15,80 @@ import Nav from './Components/Nav/Nav';
 // import Shop from './Components/Shop/Shop';
 // import ShopManager from './Components/ShopManager/ShopManager';
 // import ShopStats from './Components/ShopStats/ShopStats';
+import Header1 from './Components/Nav/Header1';
 import Footer from './Components/Footer/Footer';
 import routes from './routes';
 import './App.scss';
+import { AuthContext } from './Components/Auth/CreateContext';
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      loggedIn: false,
+      isAdmin: false,
+      username: '',
+      user_email: '',
+      user_password: ''
+    }
+  }
+
+  // componentDidMount = () => {
+  //   console.log(`App.js mounted`)
+  //   this.setState=({
+  //     loggedIn: localStorage.loggedIn
+  //   })
+  // }
+
+  handleLoggedIn = (value) => {
+    this.setState({loggedIn: value})
+  }
+
+  handleIsAdmin = (value) => {
+    this.setState({isAdmin: value})
+  }
+  
+
   render(){
+
+    // console.log(this.state.loggedIn)
     return(
       <div className='app-container'>
-        <Nav/>
-        {routes}
-        <Footer/>
+        <AuthContext.Provider value={
+          {
+          loggedIn: this.state.loggedIn,
+          isAdmin: this.state.isAdmin,
+          adminFn: this.handleIsAdmin, 
+          loginFn: this.handleLoggedIn
+          }
+          }>
+          <Nav/>
+          {routes}
+          <Footer/>
+        </AuthContext.Provider>
       </div>
     )
   }
 }
 
-export default App;
+const mapStateToProps = reduxState => reduxState;
+
+export default connect(mapStateToProps)(App);
+
+
+
+
+// componentDidMount = () => {
+//   if(this.props.userReducer.loggedIn) {
+//       axios.get('/api/getUser')
+//       .then(res => {
+//       console.log(`user info`)
+//       this.setState({
+//         username: res.data[0].username,
+//         user_email: res.data[0].user_email,
+//         user_password: res.data[0].user_password
+//       })
+//           })
+//           .catch(err => console.log(err))
+//   }
+// }
