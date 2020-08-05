@@ -59,6 +59,7 @@ app.delete('/api/deleteProduct/:id', productCTRL.deleteProduct);
 //order controllers
 app.post('/api/createOrder', orderCTRL.createOrder);
 app.post('/api/orderItem', orderCTRL.addOrderItem);
+app.get('/api/orderItemData', orderCTRL.orderItemData);
 // app.get('/api/orderCount', orderCTRL.count);
 
 

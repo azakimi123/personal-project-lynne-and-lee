@@ -30,5 +30,15 @@ module.exports = {
         } else {
             return res.sendStatus(500)
         }
+    },
+
+    orderItemData: (req, res) => {
+        const db = req.app.get('db');
+
+        console.log(`data handler hit`)
+        db.order.order_item_data()
+        .then( data => {
+            res.status(200).send(data)})
+        .catch( err => res.status(500).send(console.log(err)))
     }
 }
