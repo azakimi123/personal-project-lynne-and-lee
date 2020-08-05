@@ -22,13 +22,13 @@ function Nav(props) {
 
 // console.log(`local state: ${loggedIn}`)
 // console.log(`redux state: ${props.userReducer.loggedIn}`)
-console.log(localStorage.loggedIn)
+console.log(localStorage)
 // console.log(props)
     return (
         <div>
             <section className='nav-container'>
                 <img className='title-image' src={TitleImage} alt='lynne and lee'/>
-                { localStorage.loggedIn === true && isAdmin === true 
+                { localStorage.loggedIn === 'true' && localStorage.isAdmin === 'true' 
                 ? <AdminHeader />
                 : loggedIn === 'true' && isAdmin === false
                 ? <Header2 />

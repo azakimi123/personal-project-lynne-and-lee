@@ -19,7 +19,6 @@ function Header2(props) {
         .then(res => {
             console.log(`user info`)
             props.getUser(res.data[0])
-            toggle(true)
         })
         .catch(err => console.log(err))
     }, [])

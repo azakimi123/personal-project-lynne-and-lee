@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {clearUser, toggle, toggleAdmin} from '../../redux/userReducer';
+import {clearUser, toggle, toggleAdmin, getUser} from '../../redux/userReducer';
 import {isEditing} from '../../redux/productReducer';
 import axios from 'axios';
 import '../../App.scss'
 
 function AdminHeader(props) {
+
+    useEffect(() => {
+        axios.get('/auth/getUser')
+        .then(res => {
+            console.log(`user info`)
+            props.getUser(res.data[0])
+        })
+        .catch(err => console.log(err))
+    }, [])
 
     const handleLogOut = () => {
         axios.post('/auth/logout')
@@ -15,7 +24,10 @@ function AdminHeader(props) {
             props.toggleAdmin(false);
             props.isEditing(false);
             props.clearUser();
-            props.history.push('/');
+            localStorage.setItem('loggedIn', 'false')
+            localStorage.setItem('isAdmin', 'false')
+            // props.history.push('/')
+            window.location.reload(false)
         })
         .catch(err => console.log(err))
     }
@@ -65,4 +77,4 @@ function AdminHeader(props) {
 
 const mapStateToProps = reduxState => reduxState;
 
-export default connect(mapStateToProps, {toggle, clearUser, toggleAdmin, isEditing})(AdminHeader);
+export default connect(mapStateToProps, {toggle, clearUser, toggleAdmin, isEditing, getUser})(AdminHeader);

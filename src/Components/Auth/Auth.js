@@ -22,12 +22,15 @@ function Auth(props) {
                 console.log('admin worked')
                 adminFn(true);
                 loginFn(true);
+                localStorage.setItem('loggedIn','true')
+                localStorage.setItem('isAdmin','true')
                 props.history.push('/');
+                window.location.reload(false)
             } else {
                 console.log('regular user')
                 loginFn(true);
                 // localStorage.setItem('user', JSON.stringify(res.data))
-                localStorage.setItem('loggedIn', 'true')
+                localStorage.setItem('loggedIn','true')
                 // console.log(res.data)
                 props.history.push('/');
                 window.location.reload(false)
