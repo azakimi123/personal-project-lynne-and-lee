@@ -98,3 +98,7 @@
     @include flexEvenly();
     margin-bottom: 25px;
 }
+
+.bottom-link{
+    @include link-style(black);
+}

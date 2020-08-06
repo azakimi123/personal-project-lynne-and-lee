@@ -13,6 +13,7 @@ import Edit from './Components/Edit/Edit';
 import AddProduct from './Components/AddProduct/AddProduct';
 import ProductEdit from './Components/ProductEdit/ProductEdit';
 import Checkout from './Components/Checkout/Checkout';
+import ReturnPolicy from './Components/Footer/ReturnPolicy';
 
 export default (
     <Switch>
@@ -29,5 +30,6 @@ export default (
         <Route path='/edit' component={Edit} />
         <Route path='/edit/:productId' component={ProductEdit} />
         <Route path='/addProduct' component={AddProduct} />
+        <Route path='/returnPolicy' component={ReturnPolicy} />
     </Switch>
 )

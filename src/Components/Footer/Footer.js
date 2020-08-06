@@ -27,7 +27,9 @@ function Footer() {
                 <section className='footer-middle'>
                     <span>LINKS</span>
                     <section className='footer-links'>
-                        <p>Return Policy</p>
+                        <Link to='/returnPolicy' className='bottom-link'>
+                            <p>Return Policy</p>
+                        </Link>
                         <p>Terms and Conditions</p>
                         <p>Privacy Policy</p>
                         <p>Employment</p>
