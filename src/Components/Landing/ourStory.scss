@@ -20,3 +20,34 @@
         font-family: $font-stack;
     }
 }
+
+
+@media(max-width: 1024px){
+    .story-container{
+        width: 800px;
+        margin: 0px, 50px, 0px, 50px;
+    }
+}
+
+@media(max-width: 376px){
+    .story-container{
+        width: 300px;
+        // background: paleturquoise;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin: 0px, 50px, 0px, 50px;
+
+        p{
+            font-size: 14px;
+            line-height: 25px;
+            text-align: center;
+        }
+
+        h2{
+            font-size: 25px;
+            font-weight: 200;
+            font-family: $font-stack;
+        }
+    }
+}

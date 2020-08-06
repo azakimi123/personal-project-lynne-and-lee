@@ -36,3 +36,52 @@
         transform: scaleX(-1);
     }
 }
+
+
+@media(max-width: 1024px) {
+    .reviews-display-container{
+        width: 250px;
+        height: 150px;
+        margin: 30px;
+        margin-bottom: 30px;
+        font-size: 16px;
+        text-align: center;
+        line-height: 30px;
+        font-family: $font-stack;
+    
+        img{
+            width: 10px;
+            margin: 5px;
+        }
+    
+        .bottom-quotes{
+            width: 10px;
+            margin: 5px;
+            transform: scaleX(-1);
+        }
+    }
+}
+
+@media(max-width: 376px){
+    .reviews-display-container{
+        width: 100vw;
+        height: 150px;
+        margin-bottom: 30px;
+        font-size: 16px;
+        text-align: center;
+        line-height: 30px;
+        font-family: $font-stack;
+        // background: pink;
+    
+        img{
+            width: 10px;
+            margin: 5px;
+        }
+    
+        .bottom-quotes{
+            width: 10px;
+            margin: 5px;
+            transform: scaleX(-1);
+        }
+    }
+}

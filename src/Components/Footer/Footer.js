@@ -12,7 +12,7 @@ function Footer() {
                         <p>JOIN OUR MAILING LIST</p>
                     </section>
                     <section className='footer-bar-left'>
-                        <input placeholder='ENTER EMAIL'></input>
+                        {/* <input className='email-input' placeholder='ENTER EMAIL'></input> */}
                         <img className='arrow'src='https://image.flaticon.com/icons/svg/709/709586.svg' alt='arrow'/>
                     </section>
                 </section>
