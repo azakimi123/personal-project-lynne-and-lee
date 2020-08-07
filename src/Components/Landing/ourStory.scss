@@ -30,13 +30,17 @@
 }
 
 @media(max-width: 376px){
+
     .story-container{
-        width: 300px;
-        // background: paleturquoise;
+        width: 320px;
+        background: paleturquoise;
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
         flex-wrap: wrap;
-        margin: 0px, 50px, 0px, 50px;
+        margin-left: 35px;
+        
 
         p{
             font-size: 14px;
@@ -45,9 +49,8 @@
         }
 
         h2{
-            font-size: 25px;
+            font-size: 20px;
             font-weight: 200;
-            font-family: $font-stack;
         }
     }
 }

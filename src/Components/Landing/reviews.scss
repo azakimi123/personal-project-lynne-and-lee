@@ -42,7 +42,7 @@
     .reviews-display-container{
         width: 250px;
         height: 150px;
-        margin: 30px;
+        // margin: 30px;
         margin-bottom: 30px;
         font-size: 16px;
         text-align: center;
@@ -63,10 +63,16 @@
 }
 
 @media(max-width: 376px){
+    .review-title{
+        font-size: 20px;
+        font-weight: 200;
+        margin-left: 25px;
+    }
     .reviews-display-container{
-        width: 100vw;
+        width: 80vw;
         height: 150px;
-        margin-bottom: 30px;
+        margin-bottom: 5px;
+        margin-left: 55px;
         font-size: 16px;
         text-align: center;
         line-height: 30px;
@@ -82,6 +88,10 @@
             width: 10px;
             margin: 5px;
             transform: scaleX(-1);
+        }
+
+        .actual-reviews{
+            font-size: 14px;
         }
     }
 }

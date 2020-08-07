@@ -19,7 +19,7 @@ function Reviews() {
                 <section className='reviews-main'>
                     <section className='reviews-cover-container' key={index}>
                         <div className='reviews-display-container'>
-                            <p>
+                            <p className='actual-reviews'>
                                 <img src='https://image.flaticon.com/icons/svg/39/39711.svg' alt='quote marks'/>
                                 {review.comment} 
                                 <img className='bottom-quotes'src='https://image.flaticon.com/icons/svg/39/39711.svg' alt='quote marks'/>

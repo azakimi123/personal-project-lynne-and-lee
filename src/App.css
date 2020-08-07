@@ -123,7 +123,7 @@ header {
     align-items: center; }
   .title-image {
     width: 280px;
-    margin-left: 30px; } }
+    margin-left: 60px; } }
 
 .nav-header {
   display: none; }
@@ -399,19 +399,21 @@ h2 {
 
 @media (max-width: 376px) {
   .story-container {
-    width: 300px;
+    width: 320px;
+    background: paleturquoise;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
-    margin: 0px, 50px, 0px, 50px; }
+    margin-left: 35px; }
     .story-container p {
       font-size: 14px;
       line-height: 25px;
       text-align: center; }
     .story-container h2 {
-      font-size: 25px;
-      font-weight: 200;
-      font-family: Georgia, "Times New Roman", Times, serif; } }
+      font-size: 20px;
+      font-weight: 200; } }
 
 .picture-display-cover-container {
   display: flex;
@@ -492,7 +494,6 @@ h2 {
   .reviews-display-container {
     width: 250px;
     height: 150px;
-    margin: 30px;
     margin-bottom: 30px;
     font-size: 16px;
     text-align: center;
@@ -507,10 +508,15 @@ h2 {
       transform: scaleX(-1); } }
 
 @media (max-width: 376px) {
+  .review-title {
+    font-size: 20px;
+    font-weight: 200;
+    margin-left: 25px; }
   .reviews-display-container {
-    width: 100vw;
+    width: 80vw;
     height: 150px;
-    margin-bottom: 30px;
+    margin-bottom: 5px;
+    margin-left: 55px;
     font-size: 16px;
     text-align: center;
     line-height: 30px;
@@ -521,7 +527,9 @@ h2 {
     .reviews-display-container .bottom-quotes {
       width: 10px;
       margin: 5px;
-      transform: scaleX(-1); } }
+      transform: scaleX(-1); }
+    .reviews-display-container .actual-reviews {
+      font-size: 14px; } }
 
 .footer-cover-bar {
   width: 100vw;
@@ -857,4 +865,8 @@ h2 {
   width: 900px; }
 
 .app-container {
-  text-align: center; }
+  text-align: center;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden; }

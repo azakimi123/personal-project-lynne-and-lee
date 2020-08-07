@@ -55,6 +55,8 @@
     .banner-cover-container{
         @include image-container(100%, 300px);
         margin-top: 20px;
+        // margin-left: -30px;
+       
     }
 
     .banner-img{
