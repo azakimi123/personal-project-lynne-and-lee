@@ -76,6 +76,10 @@ header{
 
   }
 
+  .nav-header-mobile{
+    display: none;
+  }
+
   .dropdown-content {
     display: none;
     position: absolute;
@@ -99,6 +103,75 @@ header{
     transition: all 0.3s ease-in-out;
   }
 
+  @media(max-width: 1024px){
+
+    header{
+      width: 100vw;
+      margin-top: -70px;
+      // background: rebeccapurple;
+    }
+
+    ul{
+      margin-top: 140px;
+    }
+
+    .nav-header{
+      display: none;
+    }
+
+    .nav-container{
+      width: 100vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      // margin-left: 30px;
+      // background: rebeccapurple;
+    }
+
+    .nav-header-mobile{
+      display: flex;
+      width: 100vw;
+      height: 150px;
+      align-items: flex-end;
+      justify-content: space-between;
+      // background: blue;
+
+      ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        height: 240px;
+        box-sizing: border-box;
+        position: fixed;
+        // margin-top: 10px;
+        top: -40px;
+        right: 18px;
+        // background: pink;
+      }
+
+      a{
+        @include link-style($text-color);
+    }
+
+      .nav-menu-icon{
+        width: 35px;
+        position: relative;
+        right: 80px;
+      }
+    }
+
+    .title-image{
+      width: 280px;
+      margin-left: 25px;
+
+    }
+  }
+
+  .nav-header{
+    display: none;
+  }
+
   @media(max-width: 376px){
 
     header{
@@ -116,14 +189,54 @@ header{
       display: flex;
       // justify-content: center;
       align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
       // margin-left: 30px;
       // background: rebeccapurple;
+  }
+
+
+  .nav-header-mobile{
+    display: flex;
+    width: 100vw;
+    height: 120px;
+    align-items: flex-end;
+    justify-content: space-between;
+    // background: blue;
+
+    ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      width: 200px;
+      height: 240px;
+      box-sizing: border-box;
+      position: fixed;
+      // margin-top: 10px;
+      top: -70px;
+      right: -10px;
+      font-size: 12px;
+      // background: pink;
     }
-    .title-image{
-      width: 280px;
-      margin-left: 40px;
+
+    a{
+      @include link-style($text-color);
+  }
+
+    .nav-menu-icon{
+      width: 20px;
+      position: relative;
+      right: 60px;
     }
   }
+
+  .title-image{
+    width: 180px;
+    margin-left: 25px;
+
+  }
+}
+
 
   .nav-header{
     display: none;

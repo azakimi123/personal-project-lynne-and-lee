@@ -104,6 +104,10 @@
     @include link-style(black);
 }
 
+.email-text-mobile{
+    display: none;
+}
+
 
 @media(max-width: 1024px){
     .footer-cover-bar{
@@ -117,11 +121,36 @@
         align-items: center;
         justify-content: center;
         font-family: $font-stack;
+        // background: blue;
     
         &:hover{
             background: darken($color: #f9f9f9, $amount: 5);
         }
     }
+
+    .email-text-mobile{
+        display: none;
+    }
+
+    .footer-left{
+        width: 200px;
+        // background: lightgreen;
+    }
+
+    .footer-middle{
+        width: 200px;
+        margin-left: 20px;
+        // background: lightblue;
+    }
+
+    .footer-right{
+        width: 300px;
+        height: 100px;
+        // background: lightcoral;
+        margin-top: 20px;
+        justify-content: space-evenly;
+    }
+
 }
 
 @media(max-width: 376px){
@@ -145,7 +174,6 @@
 
     .email-input{
         width: 5px;
-        margin-right: 50px;
         // background: orange;
     }
 
@@ -159,4 +187,18 @@
         text-align: center;
         margin-left: 0px;
     }
+
+    .footer-email-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .email-area-mobile{
+        display: flex;
+    }
+    
+    .email-text{
+        display: none;
+    }
+
 }

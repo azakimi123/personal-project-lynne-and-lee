@@ -9,11 +9,14 @@ function Footer() {
             <section className='footer-cover-bar'>
                 <section className='footer-email'>
                     <section className='footer-bar-left'>
-                        <p>JOIN OUR MAILING LIST</p>
+                        <p className='email-text' >JOIN OUR MAILING LIST</p>
                     </section>
-                    <section className='footer-bar-left'>
-                        {/* <input className='email-input' placeholder='ENTER EMAIL'></input> */}
-                        <img className='arrow'src='https://image.flaticon.com/icons/svg/709/709586.svg' alt='arrow'/>
+                    <section className='footer-email-container'>
+                        <p  className='email-text-mobile' >JOIN OUR MAILING LIST</p>
+                        <section className='email-area-mobile' >
+                            <input className='email-input' placeholder='ENTER EMAIL'></input>
+                            <img className='arrow'src='https://image.flaticon.com/icons/svg/709/709586.svg' alt='arrow'/>
+                        </section>
                     </section>
                 </section>
             </section>
@@ -47,7 +50,7 @@ function Footer() {
                             <img src='https://image.flaticon.com/icons/svg/1384/1384031.svg'  alt='instagram'/>
                         </a>
                     </section>
-                    <section>
+                    <section className='third-footer-box'>
                         <span>© 2020, Lynne & Lee,</span><span> Powerd by </span>
                         <img className='footer-icon' src='https://image.flaticon.com/icons/svg/618/618731.svg' alt='flower heart'/>
                     </section>

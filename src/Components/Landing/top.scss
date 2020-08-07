@@ -51,6 +51,16 @@
     font-family: $font-stack;
 }
 
+@media(max-width: 1024px){
+    .banner-cover-container{
+        @include image-container(100%, 350px);
+        margin-top: 20px;
+        margin-left: -1px;
+       
+    }
+
+}
+
 @media(max-width: 376px){
     .banner-cover-container{
         @include image-container(100%, 300px);

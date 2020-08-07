@@ -27,7 +27,7 @@ console.log(localStorage)
     return (
         <div>
             <section className='nav-container'>
-                <img className='title-image' src={TitleImage} alt='lynne and lee'/>
+                {/* <img className='title-image' src={TitleImage} alt='lynne and lee'/> */}
                 { localStorage.loggedIn === 'true' && localStorage.isAdmin === 'true' 
                 ? <AdminHeader />
                 : loggedIn === 'true' && isAdmin === false
