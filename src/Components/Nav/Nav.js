@@ -26,8 +26,7 @@ console.log(localStorage)
 // console.log(props)
     return (
         <div>
-            <section className='nav-container'>
-                {/* <img className='title-image' src={TitleImage} alt='lynne and lee'/> */}
+            <section className='nav-main-container'>
                 { localStorage.loggedIn === 'true' && localStorage.isAdmin === 'true' 
                 ? <AdminHeader />
                 : loggedIn === 'true' && isAdmin === false
@@ -42,6 +41,14 @@ console.log(localStorage)
 const mapStateToProps = reduxState => reduxState;
 
 export default connect(mapStateToProps, {toggle, getUser, clearUser, toggleAdmin})(Nav);
+
+                {/* <img className='title-image' src={TitleImage} alt='lynne and lee'/> */}
+                // { localStorage.loggedIn === 'true' && localStorage.isAdmin === 'true' 
+                // ? <AdminHeader />
+                // : loggedIn === 'true' && isAdmin === false
+                // ? <Header2 />
+                // : <Header1 />
+                // }
 
 // { props.userReducer.loggedIn === true && props.userReducer.isAdmin === true 
 //     ? <AdminHeader /> 

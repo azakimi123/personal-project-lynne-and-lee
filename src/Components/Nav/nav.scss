@@ -1,19 +1,26 @@
 @import '../../styles/config.scss';
 
 
-// .nav-container{
-//   display: flex;
-// }
-header{
-    display: flex;
-    font-family: $font-stack;
-    // flex-direction: row-reverse;
-    // background: blue;
+.nav-container{
+  width: 100vw;
+  height: 100px;
+}
+.nav-main-container{
+  width: 100vw;
+  height: 210px;
+  display: flex;
+  justify-content: center;
+  font-family: $font-stack;
+  // flex-direction: column;
+  // background: blue;
+  // margin-bottom: 300px;
 }
 
-.title-image{
+.title-image-desk{
   width: 700px;
-  margin-top: 50px;
+  height: 130px;
+  margin-top: 60px;
+  // background: lightgreen;
 }
 
 .profile-pic{
@@ -25,12 +32,17 @@ header{
   margin-left: 100px;
 }
 
-.nav-header {
+.nav-top {
     width:100vw;
+    height: 80px;
     display: flex;
     align-items: center;
-    flex-direction: row-reverse;
-    justify-content:center;
+    flex-direction: column;
+    justify-content:space-between;
+    // background: blue;
+    padding-bottom: 200px;
+    margin-top: -40px;
+    
       
     ul {
     display:flex;
@@ -115,7 +127,7 @@ header{
       margin-top: 140px;
     }
 
-    .nav-header{
+    .nav-top{
       display: none;
     }
 

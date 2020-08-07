@@ -39,13 +39,21 @@
 .price {
   font-weight: 500; }
 
-header {
+.nav-container {
+  width: 100vw;
+  height: 100px; }
+
+.nav-main-container {
+  width: 100vw;
+  height: 210px;
   display: flex;
+  justify-content: center;
   font-family: Georgia, "Times New Roman", Times, serif; }
 
-.title-image {
+.title-image-desk {
   width: 700px;
-  margin-top: 50px; }
+  height: 130px;
+  margin-top: 60px; }
 
 .profile-pic {
   width: 75px;
@@ -54,25 +62,28 @@ header {
 .username {
   margin-left: 100px; }
 
-.nav-header {
+.nav-top {
   width: 100vw;
+  height: 80px;
   display: flex;
   align-items: center;
-  flex-direction: row-reverse;
-  justify-content: center; }
-  .nav-header ul {
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 200px;
+  margin-top: -40px; }
+  .nav-top ul {
     display: flex;
     list-style-type: none;
     margin-right: 50px; }
-  .nav-header li {
+  .nav-top li {
     padding: 15px; }
-  .nav-header a {
+  .nav-top a {
     list-style-type: none;
     text-decoration: none;
     color: black; }
-  .nav-header a {
+  .nav-top a {
     position: relative; }
-  .nav-header a:before {
+  .nav-top a:before {
     content: "";
     position: absolute;
     width: 0;
@@ -82,12 +93,12 @@ header {
     background-color: black;
     visibility: hidden;
     transition: all 0.3s ease-in-out; }
-  .nav-header a:hover:before {
+  .nav-top a:hover:before {
     color: lightgrey;
     margin-left: 20px;
     visibility: visible;
     width: 50%; }
-  .nav-header a:hover {
+  .nav-top a:hover {
     color: lightgrey; }
 
 .nav-header-mobile {
@@ -120,7 +131,7 @@ header {
     margin-top: -70px; }
   ul {
     margin-top: 140px; }
-  .nav-header {
+  .nav-top {
     display: none; }
   .nav-container {
     width: 100vw;
@@ -390,6 +401,7 @@ h2 {
   align-items: center;
   justify-content: center;
   margin-top: 50px;
+  margin-left: 0px;
   background-image: url("https://images.unsplash.com/photo-1543157145-f78c636d023d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
   background-size: cover;
   background-repeat: no-repeat;
@@ -662,13 +674,13 @@ h2 {
   flex-wrap: wrap; }
 
 .footer-middle {
-  width: 500px;
+  width: 400px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   text-align: left;
   margin-top: 30px;
-  margin-left: 150px; }
+  margin-left: 250px; }
   .footer-middle .footer-links {
     line-height: 14px; }
   .footer-middle p:hover {
@@ -676,7 +688,7 @@ h2 {
     cursor: pointer; }
 
 .footer-right {
-  width: 500px;
+  width: 300px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
