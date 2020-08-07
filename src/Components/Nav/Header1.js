@@ -18,6 +18,7 @@ function Header1(props) {
         <div className='nav-main-container'>
             <header>
                 <section>
+                    
                 </section>
                 <section className='nav-top'>
                     <section>
@@ -73,13 +74,17 @@ function Header1(props) {
                     )     
                     : null
                     }
-    </section>
+                </section>
             </header>
         </div>
     )
 }
 
 export default connect()(Header1);
+
+ 
+
+
 
 {/* <header>
 <section>

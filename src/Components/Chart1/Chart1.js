@@ -70,6 +70,7 @@ class Chart1 extends Component {
                                 display: true,
                                 position: 'right',
                             },
+                            elements: {line:{tension:0}},
                             scales: {
                                 yAxes: [{
                                     ticks: {

@@ -14,7 +14,7 @@ class Chart2 extends Component {
                     {
                         label: '',
                         data: [],
-                        backgroundColor: ['rgba(255, 99, 132, 0.5)', 'rgb(207, 252, 255, 0.5)', 'rgb(170, 239, 223, 0.5)', 'rgba(158, 227, 125, 0.5)', 'rgba(99, 193, 50, 0.5)', 'rgba(53, 134, 0, 0.5)', 'rgba(42, 110, 0, 0.5)', 'rgba(62, 110, 0, 0.5)']
+                        backgroundColor: ['rgba(160, 220, 200, 0.5)', 'rgb(207, 252, 255, 0.5)', 'rgb(170, 239, 223, 0.5)', 'rgba(158, 227, 125, 0.5)', 'rgba(99, 193, 50, 0.5)', 'rgba(53, 134, 0, 0.5)', 'rgba(42, 110, 0, 0.5)', 'rgba(62, 110, 0, 0.5)', 'rgba(92, 110, 0, 0.5)']
                     }
                 ]
             }
@@ -63,7 +63,7 @@ class Chart2 extends Component {
                         options={{
                             title: {
                                 display: true,
-                                text: 'Lynne and Lee Sales',
+                                text: 'Items Sold',
                                 fontSize: 25
                             },
                             legend: {

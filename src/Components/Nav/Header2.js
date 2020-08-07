@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {clearUser, getUser, toggle} from '../../redux/userReducer';
 import axios from 'axios';
+import TitleImage from '../../images/title.png';
 import '../../App.scss'
 
 function Header2(props) {
@@ -38,12 +39,15 @@ function Header2(props) {
     // console.log(loggedIn)
     return (
         <div>
-            <header>
-                <section>
+             <img className='title-image-desk-header2' src={TitleImage} alt='lynne and lee'/>
+            <header  className='top-header2'>
+                <div className='user-info'>
                     <img className='profile-pic' src={props.userReducer.user.user_profile_pic} alt='profile'/>
-                    <p className='username' >{props.userReducer.user.username}</p>
+                    <p className='username-header2' >{props.userReducer.user.username}</p>
+                </div>
+                <section>
                 </section>
-                <section className='nav-header'>
+                <section className='nav-top-header2'>
                     <ul>
                         <Link to='/'>
                             <li>HOME</li>

@@ -1,0 +1,87 @@
+@import '../../styles/config.scss';
+.title-image-desk-header2{
+    width: 700px;
+    height: 130px;
+    margin-top: 20px;
+    // background: lightgreen;
+  }
+.top-header2{
+    width:100vw;
+    height: 130px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    // background: pink;
+}
+
+.user-info{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 40px;
+    // background: plum;
+}
+
+.username-header2{
+    margin-top: 0px;
+    margin-left: 112px;
+}
+.nav-top-header2{
+    width:60vw;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content:space-between;
+    // background: blue;
+    // padding-bottom: 200px;
+    margin-bottom: 20px;
+    margin-right: 280px;
+
+    ul {
+        display:flex;
+        list-style-type: none;
+        margin-right: 50px;
+        // margin-top: 65px;
+        
+        }
+        
+        li {
+          padding:15px;
+    
+        }
+        a{
+            @include link-style($text-color);
+        }
+        
+        a{
+          position:relative;
+        }
+    
+        a:before{
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 2px;
+          bottom: 8px;
+          left: 0;
+          background-color: black;
+          visibility: hidden;
+          transition: all 0.3s ease-in-out;
+        }
+    
+        a:hover:before {
+          color: lightgrey;
+          margin-left: 20px;
+          visibility: visible;
+          width: 50%;
+        }
+    
+        a:hover{
+          color: lightgrey;
+        }
+    
+      }
+    
+      .nav-header-mobile{
+        display: none;
+      }

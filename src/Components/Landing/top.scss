@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
+    // margin-top: 20px;
     margin-left: 0px;
     background-image: url('https://images.unsplash.com/photo-1543157145-f78c636d023d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
     background-size: cover;
@@ -55,7 +55,7 @@
 @media(max-width: 1024px){
     .banner-cover-container{
         @include image-container(100%, 350px);
-        margin-top: 20px;
+        // margin-top: 20px;
         margin-left: -1px;
        
     }
@@ -65,7 +65,7 @@
 @media(max-width: 376px){
     .banner-cover-container{
         @include image-container(100%, 300px);
-        margin-top: 20px;
+        // margin-top: 20px;
         margin-left: -1px;
        
     }

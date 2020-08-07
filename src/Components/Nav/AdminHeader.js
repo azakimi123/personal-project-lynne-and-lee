@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {clearUser, toggle, toggleAdmin, getUser} from '../../redux/userReducer';
 import {isEditing} from '../../redux/productReducer';
 import axios from 'axios';
+import TitleImage from '../../images/title.png';
 import '../../App.scss'
 
 function AdminHeader(props) {
@@ -35,12 +36,15 @@ function AdminHeader(props) {
     console.log(props)
     return (
         <div>
-            <header>
+            <img className='title-image-desk-header2' src={TitleImage} alt='lynne and lee'/>
+            <header  className='top-header2'>
                 <section>
-                    <img className='profile-pic' src='https://image.flaticon.com/icons/svg/848/848043.svg' alt='profile'/>
-                    <p className='username' >{props.userReducer.user.username}</p>
+                    <div className='user-info-adminHeader'>
+                        <img className='profile-pic' src='https://image.flaticon.com/icons/svg/848/848043.svg' alt='profile'/>
+                        <p  className='username-adminHeader'  >{props.userReducer.user.username}</p>
+                    </div>
                 </section>
-                <section className='nav-header'>
+                <section className='nav-top-header2'>
                     <ul>
                         <Link to='/'>
                             <li>HOME</li>
