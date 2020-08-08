@@ -15,6 +15,7 @@ import Nav from './Components/Nav/Nav';
 // import Shop from './Components/Shop/Shop';
 // import ShopManager from './Components/ShopManager/ShopManager';
 // import ShopStats from './Components/ShopStats/ShopStats';
+// import MobileHeader1 from './Components/Nav/MobileHeader1';
 import Header1 from './Components/Nav/Header1';
 import Footer from './Components/Footer/Footer';
 import routes from './routes';
@@ -62,9 +63,9 @@ class App extends Component {
           loginFn: this.handleLoggedIn
           }
           }>
-          <Nav/>
+          <Nav />
           {routes}
-          <Footer/>
+          <Footer />
         </AuthContext.Provider>
       </div>
     )
