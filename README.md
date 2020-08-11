@@ -10,5 +10,10 @@ Shop owner features include admin authentication during the sign in process to g
 Landing Page
 <img src='https://user-images.githubusercontent.com/52367677/89912221-8a0ba480-dbaf-11ea-8064-1f02d5d46df6.png' alt='landing page view'/>
 
+Cart
+Used Redux and local state to hold products on a cart and update items and totals.  
+Implimented Slide to handle secure payments
+
+
 
 
