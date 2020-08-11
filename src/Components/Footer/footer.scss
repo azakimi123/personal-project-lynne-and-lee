@@ -121,6 +121,7 @@
         align-items: center;
         justify-content: center;
         font-family: $font-stack;
+        overflow-y: hidden;
         // background: blue;
     
         &:hover{

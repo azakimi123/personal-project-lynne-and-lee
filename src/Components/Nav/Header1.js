@@ -50,22 +50,22 @@ function Header1(props) {
                 {dropdownToggle
                 ? (
                         <ul>
-                            <Link to='/'>
+                            <Link to='/' onClick={handleToggle}>
                                 <li>HOME</li>
                             </Link>
-                            <Link to='/shop'>
+                            <Link to='/shop' onClick={handleToggle}>
                                 <li>SHOP</li>
                             </Link>
-                            <Link to='/about'>
+                            <Link to='/about' onClick={handleToggle}>
                                 <li>ABOUT</li>
                             </Link>
-                            <Link to='/contact'>
+                            <Link to='/contact' onClick={handleToggle}>
                                 <li>CONTACT</li>
                             </Link>
-                            <Link to='/signin'>
+                            <Link to='/signin' onClick={handleToggle}>
                                 <li>SIGN IN</li>
                             </Link>
-                             <Link to='/cart'>
+                             <Link to='/cart' onClick={handleToggle}>
                                 <li>CART</li>
                             </Link>
                         </ul>

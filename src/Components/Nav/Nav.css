@@ -149,13 +149,19 @@
       list-style-type: none;
       display: flex;
       flex-direction: column;
-      width: 200px;
-      height: 240px;
+      align-items: center;
+      width: 100px;
+      height: 160px;
       box-sizing: border-box;
       position: fixed;
-      top: -70px;
-      right: -30px;
-      font-size: 12px; }
+      top: -80px;
+      right: 5px;
+      font-size: 12px;
+      opacity: .85;
+      z-index: 2; }
+      .nav-top-mobile ul li {
+        margin-right: 35px;
+        z-index: 3; }
     .nav-top-mobile a {
       list-style-type: none;
       text-decoration: none;
