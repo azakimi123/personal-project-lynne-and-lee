@@ -13,6 +13,7 @@ Landing Page
 Cart
 Used Redux and local state to hold products on a cart and update items and totals.  
 Implimented Slide to handle secure payments
+<img src='https://user-images.githubusercontent.com/52367677/89958112-5a33bf80-dbf6-11ea-9b69-60ee07d58ff2.png' alt='cart page'/>
 
 
 
