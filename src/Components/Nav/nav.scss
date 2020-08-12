@@ -189,6 +189,76 @@
     display: none;
   }
 
+  @media(max-width: 475px){
+
+    .nav-top{
+      display: none;
+    }
+
+    .nav-main-container{
+      width: 100vw;
+      height: 50px;
+    }
+
+    header{
+      width: 100vw;
+      margin-top: -70px;
+      // background: rebeccapurple;
+    }
+
+    ul{
+      margin-top: 140px;
+    }
+
+  .nav-top-mobile{
+    display: flex;
+    width: 100vw;
+    height: 120px;
+    align-items: flex-end;
+    justify-content: space-between;
+    // background: blue;
+
+    ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100px;
+      height: 160px;
+      box-sizing: border-box;
+      position: fixed;
+      // margin-top: 10px;
+      top: -80px;
+      right: 5px;
+      font-size: 12px;
+      // background: rgb(255, 255, 255);
+      opacity: .85;
+      z-index: 2;
+
+      li{
+        margin-right: 35px;
+        z-index: 3;
+      }
+    }
+
+    a{
+      @include link-style($text-color);
+  }
+
+    .nav-menu-icon{
+      width: 30px;
+      position: relative;
+      right: 40px;
+    }
+  }
+
+  .title-image{
+    width: 200px;
+    margin-left: 20px;
+
+  }
+}
+
   @media(max-width: 375px){
 
     .nav-top{
