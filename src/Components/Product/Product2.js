@@ -103,7 +103,7 @@ function Product2(props){
                                     <SwiperSlide>{slide1}</SwiperSlide>
                                     <SwiperSlide>{slide2}</SwiperSlide>
                                     <SwiperSlide>{slide3}</SwiperSlide>
-                                    <div class="swiper-pagination"></div>
+                                    {/* <div className="swiper-pagination"></div> */}
                                 </Swiper>
                             {/* <button className='back-btn' onClick={handleBack}>back</button> */}
                             {/* <button className='next-btn' onClick={handleNext}>next</button> */}
