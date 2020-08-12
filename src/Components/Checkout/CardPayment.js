@@ -36,6 +36,7 @@ function CardPayment(props) {
     return (
         <div>
             <StripeCheckout
+                className='proceed-to-checkout'
                 label='Proceed to Checkout'
                 token={onToken}
                 stripeKey= 'pk_test_51H8YbfBVcp0wBeLCclvga83tvGrso7r5NhtuGR7BLUUWL4C1DZadV3zsd3VX2q4khvcfOi69Zyphx5UFBzvZz0c800jLYcJLA8'

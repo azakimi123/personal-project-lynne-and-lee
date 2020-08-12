@@ -89,12 +89,12 @@ function Checkout(props){
     console.log(userCart)
     console.log(props.cartReducer)
         return (
-            <div>
+            <div className='checkout-display'>
                 <section className='checkout-container'>
                     <p>Checkout</p>
                         {props.cartReducer.cart.map((product, index) => (
                         <div className='cart-card' key={index}>
-                            <section>
+                            <section className='product-name-card'>
                                 <p>{product.name}</p>
                             </section>
                             <section className='second-cart-card'>
@@ -110,7 +110,7 @@ function Checkout(props){
                                     <img onClick={ () => handleAdd(product.id)} 
                                         src='https://image.flaticon.com/icons/svg/864/864378.svg' alt='add button'/>
                                 </section>
-                                    <span>Item Amount: ${itemCost(product.amount, product.price, product.id)}</span>
+                                    <span className='item-amount'>Item Amount: ${itemCost(product.amount, product.price, product.id)}</span>
                                     {/* <button className='remove-btn' onClick={ () => productFinder2(product.id, product.price, product.amount)}>REMOVE</button> */}
                                     <img className='remove-btn' 
                                         onClick={ () => productFinder2(product.id, product.price, product.amount)} 
@@ -122,7 +122,7 @@ function Checkout(props){
                             {/* <span className='total-amount'>Total: ${total ? total : totalCost}</span> */}
                             <span className='total-amount'>Total: ${totalCost}</span>
                             {/* <span className='total-amount'>Total: ${total}</span> */}
-                            <CardPayment className='proceed-to-checkout' total={totalCost} clearCartFn={clearCart}/> 
+                            <CardPayment total={totalCost} clearCartFn={clearCart}/> 
                         </section>
                 </section>
             </div>

@@ -1,19 +1,17 @@
 @import '../../styles/config.scss';
 
-// .checkout-container{
-//     width: 80vw;
-//     height: 100vh;
-//     margin-left: 140px;
-//     margin-bottom: 40px;
-//     background-image: url('https://images.unsplash.com/photo-1527903789995-dc8ad2ad6de0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1307&q=80');
-//     background-size: cover;
-//     background-repeat: no-repeat;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     align-items: center;
-//     box-shadow: $border-shadow;
-// }
+.checkout-container{
+    width: 80vw;
+    height: 100vh;
+    margin-left: 140px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    // box-shadow: $border-shadow;
+}
 .cart-card{
     width: 800px;
     height: 220px;
@@ -21,11 +19,16 @@
     box-shadow: $border-shadow;
     border-radius: 5px;
     margin-left: 50px;
-    margin-bottom: 10px;
-    background: white;
+    margin-bottom: 20px;
+    text-align: center;
+    // background: rgb(214, 120, 120);
 
 }
 
+.product-name-card{
+    width: 200px;
+    // background: lightblue;
+}
 .second-cart-card{
     width: 600px;
     height: 80px;
@@ -89,4 +92,156 @@
     margin: 30px;
 }
 
+@media(max-width:1024px){
 
+
+
+    .checkout-container{
+        width: 68vw;
+        height: 55vh;
+        margin-left: 140px;
+        margin-bottom: 40px;
+        margin-top: 60px;
+        display: flex;
+        // flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        overflow-y: auto;
+        // box-shadow: $border-shadow;
+    }
+
+    .card-pic-container{
+        margin-top: -50px;
+        @include image-container(150px, 100px);
+        position: relative;
+    }
+
+    .card-product-pic{
+        @include images();
+        margin-bottom: 10px;
+        position: relative;
+    }
+
+    .cart-card{
+        width: 600px;
+        height: 220px;
+        margin-left: -10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .remove-btn{
+        margin-bottom: 155px;
+        margin-right: 8px;
+        position: relative;
+    }
+
+    .product-name-card{
+        width: 300px;
+        margin-left: 200px;
+    }
+    .second-cart-card{
+        width: 600px;
+        height: 80px;
+    }
+
+}
+
+@media(max-width: 375px){
+
+    .checkout-dsiplay{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .checkout-container{
+        width: 75vw;
+        height: 55vh;
+        margin-left: 60px;
+        margin-bottom: 40px;
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: initial;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        overflow-y: scroll;
+        // box-shadow: $border-shadow;
+        // background: blue;
+    }
+
+
+    .card-pic-container{
+        margin-top: -50px;
+        @include image-container(220px, 100px);
+        bottom: 20px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .card-product-pic{
+        @include images();
+        margin-bottom: 10px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .cart-card{
+        width: 260px;
+        height: 200px;
+        // position: relative;
+    }
+
+    .remove-btn{
+        width: 20px;
+        margin-top: -80px;
+        margin-right: 8px;
+        position: relative;
+    }
+
+    .product-name-card{
+        width: 220px;
+        margin-left: 25px;
+    }
+    .second-cart-card{
+        width: 270px;
+        height: 70px;
+    }
+
+    .checkout-bottom{
+        width: 250px;
+        height: 100px;
+        // background: red;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-buttons{
+        width: 150px;
+        height: 50px;
+        display: flex;
+        justify-content: space-evenly;
+        align-content: center;
+        margin-right: 0px;
+    
+        img{
+            width: 20px;
+            
+            &:hover{
+                cursor: pointer;
+                transition: all .2s ease-in-out;
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    .item-amount{
+        margin-right: -20px;
+    }
+}

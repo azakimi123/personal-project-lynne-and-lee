@@ -439,14 +439,28 @@ main {
     transition: all .5s ease-in-out;
     transform: scale(1.5); }
 
+.checkout-container {
+  width: 80vw;
+  height: 100vh;
+  margin-left: 140px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center; }
+
 .cart-card {
   width: 800px;
   height: 220px;
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
   border-radius: 5px;
   margin-left: 50px;
-  margin-bottom: 10px;
-  background: white; }
+  margin-bottom: 20px;
+  text-align: center; }
+
+.product-name-card {
+  width: 200px; }
 
 .second-cart-card {
   width: 600px;
@@ -499,6 +513,120 @@ main {
 
 .total-amount {
   margin: 30px; }
+
+@media (max-width: 1024px) {
+  .checkout-container {
+    width: 68vw;
+    height: 55vh;
+    margin-left: 140px;
+    margin-bottom: 40px;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow-y: auto; }
+  .card-pic-container {
+    margin-top: -50px;
+    width: 150px;
+    height: 100px;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
+    margin: 20px;
+    position: relative; }
+  .card-product-pic {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    position: relative; }
+  .cart-card {
+    width: 600px;
+    height: 220px;
+    margin-left: -10px;
+    display: flex;
+    flex-direction: column; }
+  .remove-btn {
+    margin-bottom: 155px;
+    margin-right: 8px;
+    position: relative; }
+  .product-name-card {
+    width: 300px;
+    margin-left: 200px; }
+  .second-cart-card {
+    width: 600px;
+    height: 80px; } }
+
+@media (max-width: 375px) {
+  .checkout-dsiplay {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .checkout-container {
+    width: 75vw;
+    height: 55vh;
+    margin-left: 60px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: initial;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow-y: scroll; }
+  .card-pic-container {
+    margin-top: -50px;
+    width: 220px;
+    height: 100px;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
+    margin: 20px;
+    bottom: 20px;
+    position: relative;
+    z-index: 2; }
+  .card-product-pic {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 2; }
+  .cart-card {
+    width: 260px;
+    height: 200px; }
+  .remove-btn {
+    width: 20px;
+    margin-top: -80px;
+    margin-right: 8px;
+    position: relative; }
+  .product-name-card {
+    width: 220px;
+    margin-left: 25px; }
+  .second-cart-card {
+    width: 270px;
+    height: 70px; }
+  .checkout-bottom {
+    width: 250px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+  .card-buttons {
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    margin-right: 0px; }
+    .card-buttons img {
+      width: 20px; }
+      .card-buttons img:hover {
+        cursor: pointer;
+        transition: all .2s ease-in-out;
+        transform: scale(1.2); }
+  .item-amount {
+    margin-right: -20px; } }
 
 .about-container {
   display: flex;
