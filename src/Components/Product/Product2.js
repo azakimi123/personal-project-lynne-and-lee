@@ -96,7 +96,7 @@ function Product2(props){
                                     spaceBetween={100}
                                     slidesPerView={1}
                                     navigation
-                                    pagination={{ clickable: true }}
+                                    pagination
                                     onSlideChange={() => console.log('slide change')}
                                     onSwiper={(swiper) => console.log(swiper)}
                                 >
