@@ -30,16 +30,15 @@ module.exports = {
                 to: EMAIL,
                 subject: 'New Message From Contact Form',
                 text: content
+                
 
-            }, (err, res) => {
-                if(err){
-                    console.log(err)
-                    console.log(`hello error`)
-                }
-                    res.status(200).send(info)
-            })
+            });
+
+            console.log(`message sent`)
+            res.status(200).send(info)
+
         } catch(err){
-            res.status(500).send(err);
+            console.log(err)
         }
     } 
 }
