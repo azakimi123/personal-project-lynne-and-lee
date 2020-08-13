@@ -34,9 +34,9 @@ module.exports = {
             }, (err, res) => {
                 if(err){
                     console.log(err)
-                } else {
-                    res.status(200).send(info);
+                    console.log(`hello error`)
                 }
+                    res.status(200).send(info)
             })
         } catch(err){
             res.status(500).send(err);

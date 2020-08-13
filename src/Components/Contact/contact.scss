@@ -1,0 +1,93 @@
+@import '../../styles/config.scss';
+
+.contact-main-page{
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2{
+        font-size: 35px;
+        font-family: $font-stack;
+    }
+    
+}
+
+.contact-container{
+    width: 1100px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    text-align: center;
+    // background: pink;
+    font-family: $font-stack;
+    box-shadow: $border-shadow;
+    background: url('https://images.unsplash.com/photo-1515096788709-a3cf4ce0a4a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMDk0fQ&auto=format&fit=crop&w=1253&q=80');
+ 
+}
+
+
+.contact-text{
+    width: 415px;
+    height: 300px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    margin-left: 30px;
+    font-size: 20px;
+    line-height: 30px;
+    // background: lightblue;
+}
+
+form{
+    width:600px;
+    height: 500px;
+    display:flex;
+    flex-direction: column;
+    box-shadow: $border-shadow;
+    margin: 30px;
+
+    .input{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 25px;
+    }
+
+    .contact-name-input{
+        width: 300px;
+        height: 20px;
+        margin-top: 10px;
+    }
+
+    .contact-email-input{
+        width: 300px;
+        height: 20px;
+        margin-top: 10px;
+    }
+
+    .contact-message-input{
+        width: 500px;
+        height: 100px;
+        margin-top: 10px;
+    }
+
+    .contact-send{
+        width:100px;
+        height: 40px;
+        margin-left: 25px;
+        border-radius: 8px;
+        color: white;
+        background: rgb(175, 175, 175);
+        border: none;
+    
+        &:hover{
+            background: grey;
+            cursor: pointer;
+        }
+    }
+}
