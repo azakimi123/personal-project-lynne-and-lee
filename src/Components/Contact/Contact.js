@@ -11,7 +11,6 @@ function Contact(props){
     const handleSubmit = () => {
         handleEmail()
         clearForm()
-        alert(`message has been sent`)
     }
 
     const clearForm = () => {
@@ -22,6 +21,8 @@ function Contact(props){
 
     const handleEmail = () => {
         axios.post('/api/contact', {name, email, message})
+        .then( () => alert(`message has been sent`))
+        .catch(err => console.log(err))
     }
 
         return (
