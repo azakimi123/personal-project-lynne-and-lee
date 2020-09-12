@@ -27,7 +27,7 @@ function Edit(props){
         })
         .catch(err => console.log(err))
     }
-    console.log(props)
+    console.log(newProducts)
     return (
         <div>
             <div className='edit-shop-container'>

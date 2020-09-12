@@ -52,7 +52,9 @@ function Footer() {
                     </section>
                     <section className='third-footer-box'>
                         <span>© 2020, Lynne & Lee,</span><span> Powerd by </span>
-                        <img className='footer-icon' src='https://image.flaticon.com/icons/svg/618/618731.svg' alt='flower heart'/>
+                        <a href='https://aaronzakimi.com/' target='_blank'>
+                            <img className='footer-icon' src='https://image.flaticon.com/icons/svg/618/618731.svg' alt='flower heart'/>
+                        </a>
                     </section>
                 </section>
             </section>
